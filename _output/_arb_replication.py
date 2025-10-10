@@ -11,7 +11,7 @@
 # 
 # 1. **Data Sources**:
 #    - **TIPS Data:** Daily yield data for TIPS from U.S. Treasury sources.
-#    - **Inflation Swap Data:** Zero-coupon inflation swap rates from Bloomberg.
+#    - **Inflation Expectations Data:** Zero-coupon inflation rates from the Cleveland Fed's Term Structure of Inflation Expectations release.
 #    - **Nominal Treasury Data:** Daily nominal Treasury yields from CRSP.
 # 
 # 2. **Synthetic Yield Construction:**
