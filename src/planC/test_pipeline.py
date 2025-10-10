@@ -8,6 +8,7 @@ import pandas as pd
 
 from planC import pipeline
 from planC import discount_curves
+from planC import proof_of_concept
 from planC.crsp_tsy import make_sample_treasury_yields
 from planC.infl_curve_public import make_sample_inflation_curve
 from planC.wrds_trace import make_sample_trace_data, summarise_trades
@@ -62,3 +63,21 @@ def test_trace_summary_from_sample():
     summary = summarise_trades(trades)
     assert (summary["trade_count"] > 0).all()
     assert len(summary) == len(dates)
+
+
+def test_proof_of_concept_runner(tmp_path):
+    output_dir = tmp_path / "poc"
+    report_path = tmp_path / "planC_proof_of_concept.md"
+    artefacts = proof_of_concept.run_proof_of_concept(
+        "2023-01-01",
+        "2023-01-05",
+        output_dir=output_dir,
+        report_path=report_path,
+        live_data=False,
+    )
+    assert report_path.exists()
+    assert artefacts["summary_path"].exists()
+    assert not (output_dir / "basis_timeseries.png").exists()
+    summary_df = pd.read_csv(artefacts["summary_path"])
+    assert "metric" in summary_df.columns
+    assert artefacts["results"]["synthetic_basis"].shape[0] > 0

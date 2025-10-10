@@ -250,12 +250,54 @@ def task_planC_novendor():
 
     return {
         'actions': [
-            f"python -m planC.pipeline --novendor --start 2023-01-01 --end 2023-01-05 --output-dir {output_dir}",
+            f"PYTHONPATH=src python -m planC.pipeline --novendor --start 2023-01-01 --end 2023-01-05 --output-dir {output_dir}",
         ],
         'file_dep': file_dep,
         'targets': targets,
         'clean': [_clean],
     }
+
+
+def task_planC_proof_of_concept():
+    """Generate proof-of-concept artefacts for the Plan C workflow."""
+
+    output_dir = Path('_output') / "planC_poc"
+    report_path = Path("reports") / "planC_proof_of_concept.md"
+    summary_path = output_dir / "basis_summary.csv"
+
+    file_dep = [
+        Path("./src/planC/__init__.py"),
+        Path("./src/planC/pipeline.py"),
+        Path("./src/planC/proof_of_concept.py"),
+        Path("./src/planC/wrds_trace.py"),
+        Path("./src/planC/crsp_tsy.py"),
+        Path("./src/planC/tips_index.py"),
+        Path("./src/planC/infl_curve_public.py"),
+        Path("./src/planC/discount_curves.py"),
+        Path("./src/planC/cashflows_nominal.py"),
+        Path("./src/planC/cashflows_tips.py"),
+        Path("./src/planC/synthetic_nominal.py"),
+    ]
+
+    def _clean():
+        shutil.rmtree(output_dir, ignore_errors=True)
+        if report_path.exists():
+            report_path.unlink()
+
+    command = (
+        "PYTHONPATH=src python -m planC.proof_of_concept "
+        "--start 2023-01-01 --end 2023-01-31 "
+        f"--output-dir {output_dir} --report {report_path}"
+    )
+
+    return {
+        "actions": [command],
+        "file_dep": file_dep,
+        "targets": [summary_path, report_path],
+        "clean": [_clean],
+    }
+
+
 
 notebook_tasks = {
     "arb_replication.ipynb": {
