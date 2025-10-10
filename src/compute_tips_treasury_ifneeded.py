@@ -1,54 +1,39 @@
 import os
-import pandas as pd
+from pathlib import Path
+
 import numpy as np
+import pandas as pd
 from decouple import config
 
-DATA_DIR                = config("DATA_DIR")
-OUTPUT_DIR              = config("OUTPUT_DIR")
+from planC.infl_curve_public import load_clevelandfed_zero_coupon_inflation
+
+DATA_DIR = config("DATA_DIR")
+OUTPUT_DIR = config("OUTPUT_DIR")
 
 
 # ------------------------------------------------------------------------------
-# Import inflation swap data
+# Import inflation expectations data
 # ------------------------------------------------------------------------------
+def import_inflation_expectations():
+        maturities = [2, 5, 10, 20]
+        try:
+                swaps = load_clevelandfed_zero_coupon_inflation(DATA_DIR, maturities)
+        except RuntimeError as exc:
+                raise RuntimeError(
+                        "Unable to load Cleveland Fed inflation expectations term "
+                        "structure required for the synthetic nominal construction. "
+                        "Download the workbook from the Cleveland Fed website and place "
+                        "it in the data directory specified by DATA_DIR before rerunning."
+                ) from exc
+
+        output_path = Path(DATA_DIR) / "clevelandfed_zero_coupon_inflation.parquet"
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        swaps.to_parquet(output_path, compression="snappy")
+        return swaps
+
+
 def import_inflation_swap_data():
-	# Point to the CSV file instead of an Excel file
-	swaps_path = os.path.join(OUTPUT_DIR, "treasury_inflation_swaps.csv")
-
-	# Read CSV; explicitly parse the "Dates" column as datetime
-	swaps = pd.read_csv(swaps_path, parse_dates=["Dates"])
-
-	# Create a column mapping based on the schema you provided
-	column_map = {
-		"Dates": "date",
-		"USSWITA BGN Curncy": "inf_swap_1m",
-		"USSWITC BGN Curncy": "inf_swap_3m",
-		"USSWITF BGN Curncy": "inf_swap_6m",
-		"USSWIT1 BGN Curncy": "inf_swap_1y",
-		"USSWIT2 BGN Curncy": "inf_swap_2y",
-		"USSWIT3 BGN Curncy": "inf_swap_3y",
-		"USSWIT4 BGN Curncy": "inf_swap_4y",
-		"USSWIT5 BGN Curncy": "inf_swap_5y",
-		"USSWIT10 BGN Curncy": "inf_swap_10y",
-		"USSWIT20 BGN Curncy": "inf_swap_20y",
-		"USSWIT30 BGN Curncy": "inf_swap_30y"
-	}
-
-	# Rename columns using the mapping
-	swaps = swaps.rename(columns=column_map)
-
-	# Convert relevant columns to numeric and divide by 100
-	inf_cols = [
-		"inf_swap_1y", "inf_swap_2y", "inf_swap_3y",
-		"inf_swap_4y", "inf_swap_5y", "inf_swap_10y",
-		"inf_swap_20y", "inf_swap_30y"
-	]
-	for col in inf_cols:
-		swaps[col] = pd.to_numeric(swaps[col], errors="coerce") / 100.0
-
-	# Select only the date and inflation swap columns, in a clean order
-	swaps = swaps[["date"] + inf_cols]
-
-	return swaps
+        return import_inflation_expectations()
 
 
 # ------------------------------------------------------------------------------
@@ -110,7 +95,7 @@ def compute_tips_treasury():
 	This function merges data from three sources:
 		1. TIPS yields (real rates) imported via import_tips_yields()
 		2. Zero-coupon Treasury yields (nominal rates) imported via import_treasury_yields()
-		3. Inflation swap data (inflation expectations) imported via import_inflation_swap_data()
+		3. Inflation expectations imported via import_inflation_expectations()
 
 	It computes for each tenor (2, 5, 10, and 20 years):
 		- The TIPS-implied risk-free rate:
@@ -138,7 +123,7 @@ def compute_tips_treasury():
 	"""
 	real = import_tips_yields()
 	nom = import_treasury_yields()
-	swaps = import_inflation_swap_data()
+        swaps = import_inflation_expectations()
 
 	merged = pd.merge(real, nom, on="date", how="inner")
 	merged = pd.merge(merged, swaps, on="date", how="inner")

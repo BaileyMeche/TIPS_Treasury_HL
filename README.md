@@ -132,7 +132,14 @@ definitions. That is, all code that references these variables and others are
 loading by importing `config`.
 
 #### Note on Data Dependencies
-If your machine does not have Bloomberg access, it cannot run `xbbg` properly. When running `doit`, this will cause the task `pull_bloomberg_treasury_inflation_swaps` to fail with a `blpapi` error. To avoid this, run `doit` which creates the data directory `_output`, then manually insert the completed file `treasury_inflation_swaps.csv`.
+The synthetic nominal calculations now rely exclusively on the Cleveland Fed's
+public "Term Structure of Inflation Expectations" dataset. The loader in
+`src/planC/infl_curve_public.py` will attempt to download the Excel workbook
+automatically. If the download fails (for example, because the Cleveland Fed
+blocks automated traffic), the pipeline will raise a clear error describing
+where to manually place the workbook. You can also point the loader at an
+alternate URL by setting the `CLEVELANDFED_TERM_STRUCTURE_URL` environment
+variable before running the pipeline.
 
 ### Naming Conventions
 

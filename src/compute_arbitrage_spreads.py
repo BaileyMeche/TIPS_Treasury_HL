@@ -2,66 +2,27 @@
 This file is the Python version of compute_tips_treasury.do from esiriwardane
 '''
 
-import pandas as pd
-import numpy as np
 import os
-from pathlib import Path
-import math
 from math import exp, log
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
 
 # Import your previously defined functions
 from load_fed_yield_curve import load_fed_yield_curve  # Loads nominal Treasury yields (feds200628.csv)
 from load_tips_yield_curve import load_tips_yield_curve  # Loads TIPS yields (feds200805.csv)
+from planC.infl_curve_public import load_clevelandfed_zero_coupon_inflation
 
 # DATA_DIR: the directory where your data files are stored
 from settings import DATA_DIR
 
+
 def load_inflation_swaps(data_dir=DATA_DIR):
-    """
-    Load the inflation swap data from the Excel file.
-    Expected file: treasury_inflation_swaps.xlsx in DATA_DIR.
-    
-    Reads the "Data" sheet, starting at cell C6 with the first row as header.
-    Renames the appropriate columns to:
-       inf_swap_2y, inf_swap_5y, inf_swap_10y, inf_swap_20y, inf_swap_30y
-    Converts rates from percentages to decimals.
-    Expects a column 'Dates' that will be renamed to 'date'.
-    Keeps only the date and inf_swap* columns.
-    """
-    file_path = Path(data_dir) / "treasury_inflation_swaps.xlsx"
-    # Read the Excel file. Adjust skiprows if necessary (here we assume the header starts at row 6)
-    # Note: Pandas uses 0-indexing; so to start at row 6 (C6), skip the first 5 rows.
-    df = pd.read_excel(file_path, sheet_name="Data", skiprows=5, engine="openpyxl")
-    
-    # Rename columns. Assuming the columns to be renamed are in positions corresponding to H, K, L, M, N.
-    # You may need to adjust these column names depending on the file layout.
-    # For this example, assume the following mapping:
-    rename_mapping = {
-        'H': 'inf_swap_2y',
-        'K': 'inf_swap_5y',
-        'L': 'inf_swap_10y',
-        'M': 'inf_swap_20y',
-        'N': 'inf_swap_30y',
-        'Dates': 'date'
-    }
-    # If your Excel file already has proper headers (e.g., "Dates"), rename accordingly:
-    df = df.rename(columns=rename_mapping)
-    
-    # Convert the inflation swap columns from string to numeric and divide by 100
-    swap_cols = ['inf_swap_2y', 'inf_swap_5y', 'inf_swap_10y', 'inf_swap_20y', 'inf_swap_30y']
-    for col in swap_cols:
-        df[col] = pd.to_numeric(df[col], errors='coerce') / 100.0
-    
-    # Keep only the date and swap columns
-    df = df[['date'] + swap_cols].copy()
-    
-    # Convert date column to datetime if not already
-    df['date'] = pd.to_datetime(df['date'], errors='coerce')
-    
-    # Drop rows with missing dates
-    df = df.dropna(subset=['date'])
-    
-    return df
+    """Load zero-coupon inflation expectations from the Cleveland Fed."""
+
+    swaps = load_clevelandfed_zero_coupon_inflation(data_dir, [2, 5, 10, 20])
+    return swaps
 
 def process_nominal_yields(nom_df):
     """
@@ -150,7 +111,7 @@ def merge_and_compute_arbitrage(nom_df, tips_df, swaps_df):
     return df
 
 def main():
-    # Load inflation swap data from treasury_inflation_swaps.xlsx
+    # Load Cleveland Fed zero-coupon inflation expectations
     swaps_df = load_inflation_swaps(DATA_DIR)
     
     # Load nominal Treasury yields (feds200628.csv)
