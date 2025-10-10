@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import logging
 import numbers
+import os
 from pathlib import Path
 from typing import Dict, Mapping, Optional, Sequence
 
@@ -12,14 +13,38 @@ import pandas as pd
 
 from .pipeline import DEFAULT_HORIZONS, DEFAULT_MATURITIES, default_output_dir, run_pipeline
 
+try:  # pragma: no cover - optional dependency for figure styling
+    import matplotlib.pyplot as plt
+except Exception as exc:  # pragma: no cover - guard against missing matplotlib
+    raise RuntimeError(
+        "matplotlib is required to generate the proof-of-concept figures"
+    ) from exc
+
 LOGGER = logging.getLogger(__name__)
 
+FIGURE_NAME = "basis_timeseries.png"
 SUMMARY_NAME = "basis_summary.csv"
 REPORT_NAME = "planC_proof_of_concept.md"
 
 
 def _ensure_path(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+
+
+def _create_figure(basis: pd.DataFrame, figure_path: Path) -> None:
+    """Create a basis time-series chart."""
+
+    _ensure_path(figure_path)
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+    ax.plot(basis["valuation_date"], basis["basis"], marker="o", linestyle="-", linewidth=1.0)
+    ax.set_title("Synthetic Nominal vs TIPS Basis (Proof-of-Concept)")
+    ax.set_xlabel("Valuation date")
+    ax.set_ylabel("Basis (price units)")
+    ax.grid(True, which="both", linestyle="--", linewidth=0.5, alpha=0.6)
+    fig.autofmt_xdate()
+    fig.tight_layout()
+    fig.savefig(figure_path, dpi=200)
+    plt.close(fig)
 
 
 def _build_summary_table(basis: pd.DataFrame) -> pd.DataFrame:
@@ -50,11 +75,13 @@ def _build_summary_table(basis: pd.DataFrame) -> pd.DataFrame:
 
 def _write_report(
     summary: pd.DataFrame,
+    figure_path: Path,
     report_path: Path,
     *,
     use_sample_data: bool,
 ) -> None:
     _ensure_path(report_path)
+    figure_rel = os.path.relpath(figure_path, report_path.parent)
     lines = [
         "# Plan C Proof-of-Concept",
         "",
@@ -75,13 +102,13 @@ def _write_report(
     lines.extend(
         [
             "",
-            "## Notes",
+            "## Basis time series",
+            "",
+            f"![Synthetic basis time series]({figure_rel})",
             "",
             "The synthetic nominal leg and the TIPS leg are constructed using the "
             "Plan C modules. The resulting basis illustrates how the toolkit "
             "can surface mispricing dynamics even when only public proxies are available.",
-            "This proof-of-concept configuration focuses on reproducible CSV outputs "
-            "and omits plot generation to keep the artefact footprint lightweight.",
         ]
     )
     report_path.write_text("\n".join(lines), encoding="utf-8")
@@ -122,18 +149,21 @@ def run_proof_of_concept(
     basis["valuation_date"] = pd.to_datetime(basis["valuation_date"])
     basis = basis.sort_values("valuation_date")
 
+    figure_path = output / FIGURE_NAME
+    _create_figure(basis, figure_path)
+
     summary = _build_summary_table(basis)
     summary_path = output / SUMMARY_NAME
     _ensure_path(summary_path)
     summary.to_csv(summary_path, index=False)
 
-    _write_report(summary, report, use_sample_data=not live_data)
+    _write_report(summary, figure_path, report, use_sample_data=not live_data)
 
     return {
         "results": results,
+        "figure_path": figure_path,
         "summary_path": summary_path,
         "report_path": report,
-        "output_dir": output,
     }
 
 
@@ -144,7 +174,7 @@ def _parse_args(args: Optional[Sequence[str]] = None) -> argparse.Namespace:
     parser.add_argument(
         "--output-dir",
         default=None,
-        help="Directory for CSV outputs (defaults to _output/planC/proof_of_concept)",
+        help="Directory for CSV outputs and figures (defaults to _output/planC/proof_of_concept)",
     )
     parser.add_argument(
         "--report",
@@ -187,7 +217,7 @@ def main(argv: Optional[Sequence[str]] = None) -> Mapping[str, object]:  # pragm
         horizons=args.horizons,
         live_data=args.live_data,
     )
-    LOGGER.info("Proof-of-concept artefacts written to %s", artefacts["output_dir"])
+    LOGGER.info("Proof-of-concept artefacts written to %s", artefacts["figure_path"].parent)
     LOGGER.info("Report available at %s", artefacts["report_path"])
     return artefacts
 

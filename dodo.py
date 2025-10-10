@@ -261,8 +261,9 @@ def task_planC_novendor():
 def task_planC_proof_of_concept():
     """Generate proof-of-concept artefacts for the Plan C workflow."""
 
-    output_dir = Path('_output') / "planC_poc"
+    output_dir = OUTPUT_DIR / "planC_poc"
     report_path = Path("reports") / "planC_proof_of_concept.md"
+    figure_path = output_dir / "basis_timeseries.png"
     summary_path = output_dir / "basis_summary.csv"
 
     file_dep = [
@@ -293,7 +294,7 @@ def task_planC_proof_of_concept():
     return {
         "actions": [command],
         "file_dep": file_dep,
-        "targets": [summary_path, report_path],
+        "targets": [figure_path, summary_path, report_path],
         "clean": [_clean],
     }
 

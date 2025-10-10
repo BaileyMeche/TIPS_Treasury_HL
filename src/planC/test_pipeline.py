@@ -76,8 +76,8 @@ def test_proof_of_concept_runner(tmp_path):
         live_data=False,
     )
     assert report_path.exists()
+    assert artefacts["figure_path"].exists()
     assert artefacts["summary_path"].exists()
-    assert not (output_dir / "basis_timeseries.png").exists()
     summary_df = pd.read_csv(artefacts["summary_path"])
     assert "metric" in summary_df.columns
     assert artefacts["results"]["synthetic_basis"].shape[0] > 0
