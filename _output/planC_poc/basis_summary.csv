@@ -1,0 +1,9 @@
+metric,value
+start_date,2023-01-01
+end_date,2023-01-31
+observations,31
+mean_basis,-12.31104680226221
+median_basis,-12.310321194725603
+std_basis,0.2062941066050256
+min_basis,-12.68585235163647
+max_basis,-11.969430278848733
