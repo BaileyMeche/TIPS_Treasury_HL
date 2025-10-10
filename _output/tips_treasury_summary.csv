@@ -1,0 +1,10 @@
+,TIPS-Treasury 2Y,TIPS-Treasury 5Y,TIPS-Treasury 10Y,TIPS-Treasury 20Y
+Mean,20,19,25,26
+p50,23,20,25,26
+Std. Dev,14,8,7,8
+Min,0,0,0,1
+Max,54,56,40,47
+AR1,0.978,0.981,0.976,0.974
+First,Jan-2010,Jan-2010,Jan-2010,Jan-2010
+Last,Feb-2020,Feb-2020,Feb-2020,Feb-2020
+N,2506,2541,2541,2541
