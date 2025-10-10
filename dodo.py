@@ -194,6 +194,47 @@ def task_generate_figures():
     }
 
 
+
+def task_planC_novendor():
+    """Run the Plan C pipeline using synthetic data only."""
+    output_dir = OUTPUT_DIR / 'planC'
+    csv_files = [
+        'trace_trades.csv',
+        'trace_summary.csv',
+        'treasury_yields.csv',
+        'inflation_curve.csv',
+        'discount_table.csv',
+        'tips_index.csv',
+        'nominal_cashflows.csv',
+        'tips_cashflows.csv',
+        'synthetic_basis.csv',
+    ]
+    file_dep = [
+        Path('./src/planC/__init__.py'),
+        Path('./src/planC/pipeline.py'),
+        Path('./src/planC/wrds_trace.py'),
+        Path('./src/planC/crsp_tsy.py'),
+        Path('./src/planC/tips_index.py'),
+        Path('./src/planC/infl_curve_public.py'),
+        Path('./src/planC/discount_curves.py'),
+        Path('./src/planC/cashflows_nominal.py'),
+        Path('./src/planC/cashflows_tips.py'),
+        Path('./src/planC/synthetic_nominal.py'),
+    ]
+    targets = [output_dir / name for name in csv_files]
+
+    def _clean():
+        shutil.rmtree(output_dir, ignore_errors=True)
+
+    return {
+        'actions': [
+            f"python -m planC.pipeline --novendor --start 2023-01-01 --end 2023-01-05 --output-dir {output_dir}",
+        ],
+        'file_dep': file_dep,
+        'targets': targets,
+        'clean': [_clean],
+    }
+
 notebook_tasks = {
     "arb_replication.ipynb": {
         "file_dep": [
