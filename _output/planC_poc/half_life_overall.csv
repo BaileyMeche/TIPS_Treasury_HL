@@ -1,0 +1,3 @@
+method,rho,half_life_days,ci_lower,ci_upper,sample_size,notes,threshold,num_shocks
+ar1,0.9971973319486865,246.9701665704253,-9464.91084589057,9958.85117903142,31,,,
+event_decay,,0.44083588016174774,,,31,,0.0544489377283055,6.0
