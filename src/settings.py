@@ -169,6 +169,11 @@ def create_dirs():
     )
     # (d["BASE_DIR"] / "_docs").mkdir(parents=True, exist_ok=True)
 
+    _update_directory_globals()
+
 
 if __name__ == "__main__":
+    create_dirs()
+else:
+    # Keep commonly imported directory constants in sync for module consumers.
     create_dirs()
