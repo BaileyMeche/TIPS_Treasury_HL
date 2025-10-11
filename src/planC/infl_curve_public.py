@@ -12,15 +12,16 @@ import math
 import os
 import re
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
-from typing import List, Optional, Sequence
+from typing import Iterable, List, Optional, Sequence
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 import numpy as np
 import pandas as pd
+import requests
 
 __all__ = [
     "ClevelandFedInflationCurve",
@@ -418,19 +419,6 @@ def load_clevelandfed_zero_coupon_inflation(
             f"{available}."
         )
     return panel
-"""Cleveland Fed inflation expectations ingestion."""
-
-from __future__ import annotations
-
-from dataclasses import dataclass
-from datetime import date
-from typing import Iterable, Optional, Sequence
-
-import numpy as np
-import pandas as pd
-import requests
-
-
 @dataclass(frozen=True)
 class InflationCurveQuery:
     start_date: date
