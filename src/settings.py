@@ -19,6 +19,7 @@ over to the other configuration, for example.
 """
 
 from pathlib import Path
+import warnings
 
 ## Helper for determining OS
 from platform import system
@@ -117,12 +118,69 @@ def config(*args, **kwargs):
     return var
 
 
+def _ensure_dir(path: Path, *, fallback: Path, label: str) -> Path:
+    """Create ``path`` if possible, otherwise fall back to ``fallback``.
+
+    The helper keeps ``settings.d`` consistent by returning the directory that
+    ultimately exists so callers can update their configuration mapping.
+    """
+
+    path = Path(path).resolve()
+    fallback = Path(fallback).resolve()
+
+    try:
+        path.mkdir(parents=True, exist_ok=True)
+    except (PermissionError, FileNotFoundError) as exc:
+        fallback.mkdir(parents=True, exist_ok=True)
+        warnings.warn(
+            (
+                f"Could not create {label} at {path}. "
+                f"Falling back to {fallback}. ({exc})"
+            ),
+            RuntimeWarning,
+            stacklevel=2,
+        )
+        return fallback
+    else:
+        return path
+
+
+def _update_directory_globals() -> None:
+    """Expose commonly used directories as module-level globals."""
+
+    for key in ("DATA_DIR", "OUTPUT_DIR", "MANUAL_DATA_DIR", "PUBLISH_DIR"):
+        globals()[key] = d[key]
+
+
 def create_dirs():
     ## If they don't exist, create the _data and _output directories
-    d["DATA_DIR"].mkdir(parents=True, exist_ok=True)
-    d["OUTPUT_DIR"].mkdir(parents=True, exist_ok=True)
+    d["DATA_DIR"] = _ensure_dir(
+        d["DATA_DIR"],
+        fallback=(d["BASE_DIR"] / "_data").resolve(),
+        label="DATA_DIR",
+    )
+    d["OUTPUT_DIR"] = _ensure_dir(
+        d["OUTPUT_DIR"],
+        fallback=(d["BASE_DIR"] / "_output").resolve(),
+        label="OUTPUT_DIR",
+    )
+    d["MANUAL_DATA_DIR"] = _ensure_dir(
+        d["MANUAL_DATA_DIR"],
+        fallback=(d["BASE_DIR"] / "data_manual").resolve(),
+        label="MANUAL_DATA_DIR",
+    )
+    d["PUBLISH_DIR"] = _ensure_dir(
+        d["PUBLISH_DIR"],
+        fallback=(d["OUTPUT_DIR"] / "publish").resolve(),
+        label="PUBLISH_DIR",
+    )
     # (d["BASE_DIR"] / "_docs").mkdir(parents=True, exist_ok=True)
+
+    _update_directory_globals()
 
 
 if __name__ == "__main__":
+    create_dirs()
+else:
+    # Keep commonly imported directory constants in sync for module consumers.
     create_dirs()
