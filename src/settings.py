@@ -145,6 +145,32 @@ def _ensure_dir(path: Path, *, fallback: Path, label: str) -> Path:
         return path
 
 
+def _resolve_directory(key: str, *, fallback: Path) -> Path:
+    """Resolve a configured directory and update module globals."""
+
+    resolved = _ensure_dir(d[key], fallback=fallback, label=key)
+    d[key] = resolved
+    globals()[key] = resolved
+    return resolved
+
+
+def create_dirs():
+    ## If they don't exist, create the _data and _output directories
+    _resolve_directory(
+        "DATA_DIR",
+        fallback=(d["BASE_DIR"] / "_data").resolve(),
+    )
+    _resolve_directory(
+        "OUTPUT_DIR",
+        fallback=(d["BASE_DIR"] / "_output").resolve(),
+    )
+    _resolve_directory(
+        "MANUAL_DATA_DIR",
+        fallback=(d["BASE_DIR"] / "data_manual").resolve(),
+    )
+    _resolve_directory(
+        "PUBLISH_DIR",
+        fallback=(d["OUTPUT_DIR"] / "publish").resolve(),
 def create_dirs():
     ## If they don't exist, create the _data and _output directories
     d["DATA_DIR"] = _ensure_dir(
