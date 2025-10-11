@@ -145,13 +145,6 @@ def _ensure_dir(path: Path, *, fallback: Path, label: str) -> Path:
         return path
 
 
-def _update_directory_globals() -> None:
-    """Expose commonly used directories as module-level globals."""
-
-    for key in ("DATA_DIR", "OUTPUT_DIR", "MANUAL_DATA_DIR", "PUBLISH_DIR"):
-        globals()[key] = d[key]
-
-
 def create_dirs():
     ## If they don't exist, create the _data and _output directories
     d["DATA_DIR"] = _ensure_dir(
