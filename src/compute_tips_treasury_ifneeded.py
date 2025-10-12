@@ -3,12 +3,9 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from decouple import config
 
 from planC.infl_curve_public import load_clevelandfed_zero_coupon_inflation
-
-DATA_DIR = config("DATA_DIR")
-OUTPUT_DIR = config("OUTPUT_DIR")
+from settings import DATA_DIR, OUTPUT_DIR
 
 
 # ------------------------------------------------------------------------------
