@@ -192,6 +192,7 @@ def create_dirs():
 
 create_dirs()
 
+
 if __name__ == "__main__":
     create_dirs()
     pass
