@@ -73,6 +73,82 @@ MATURITY_GRID = tuple(range(1, 31))
 HALF_LIFE_EWMA_SPAN = 20
 NEWEY_WEST_LAG = 5
 
+import numpy as np
+import pandas as pd
+
+def _ensure_date_col(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Ensure a 'date' column exists and is datetime64[ns].
+    Strategy:
+      1) If DatetimeIndex, lift to 'date'.
+      2) Exact 'date' -> to_datetime.
+      3) Column name contains 'date' (case-insensitive) -> use first.
+      4) Known aliases -> map to 'date'.
+      5) Try parse-every-column; choose the one with most valid datetimes.
+    """
+    if df is None or not isinstance(df, pd.DataFrame):
+        raise TypeError("_ensure_date_col expected a DataFrame")
+
+    df = df.copy()
+
+    # 1) DatetimeIndex -> column
+    if isinstance(df.index, pd.DatetimeIndex):
+        df = df.reset_index().rename(columns={"index": "date"})
+        df["date"] = pd.to_datetime(df["date"])
+        return df
+
+    # 2) Exact 'date'
+    if "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"])
+        return df
+
+    # 3) Any column containing 'date' (case-insensitive)
+    date_like_cols = [c for c in df.columns if "date" in c.lower()]
+    if date_like_cols:
+        c = date_like_cols[0]
+        df = df.rename(columns={c: "date"})
+        df["date"] = pd.to_datetime(df["date"])
+        return df
+
+    # 4) Common aliases
+    aliases = [
+        "trade_date", "trd_exctn_dt", "trade_dt", "as_of_date", "asof_date",
+        "pricing_date", "obs_date", "observation_date", "DATE", "Date", "dt",
+        "timestamp", "time", "day"
+    ]
+    existing_alias = next((c for c in aliases if c in df.columns), None)
+    if existing_alias:
+        df = df.rename(columns={existing_alias: "date"})
+        df["date"] = pd.to_datetime(df["date"])
+        return df
+
+    # 5) Parse every column; pick the one with most non-NaT after to_datetime
+    best_col = None
+    best_valid = -1
+    for c in df.columns:
+        try:
+            parsed = pd.to_datetime(df[c], errors="coerce", infer_datetime_format=True)
+            valid = parsed.notna().sum()
+            if valid > best_valid and valid > 0:
+                best_valid = valid
+                best_col = c
+        except Exception:
+            pass
+
+    if best_col is not None:
+        df = df.rename(columns={best_col: "date"})
+        df["date"] = pd.to_datetime(df["date"], errors="coerce")
+        # require that at least a meaningful portion parsed
+        if df["date"].notna().sum() >= max(5, int(0.5 * len(df))):
+            return df
+
+    # Give a very clear error with available columns
+    raise KeyError(
+        "No usable date column found. Available columns are: "
+        f"{list(df.columns)}. "
+        "Tried DatetimeIndex, exact 'date', name-contains 'date', aliases "
+        f"{aliases}, and heuristic parsing."
+    )
 
 def quarter_date_range(year: int, quarter: int) -> Tuple[date, date]:
     start_month = 3 * (quarter - 1) + 1
@@ -721,6 +797,8 @@ def run_planC_fullsample_enrich_safe(config: Optional[PlanCSafeConfig] = None) -
             tips_cf.to_csv(batch_dir / "tips_cashflows.csv", index=False)
             _write_csv(basis, batch_dir / "synthetic_basis.csv")
 
+            # trace_trimmed = _ensure_date_col(trace_trimmed)
+            # summary       = _ensure_date_col(summary)
             enrichment = _compute_enrichment(trace_trimmed, summary)
             enrichment["sampled"] = sampled
             enrichment.to_csv(batch_dir / "panel_enriched.csv", index=False)
