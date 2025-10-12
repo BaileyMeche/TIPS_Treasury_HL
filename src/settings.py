@@ -171,8 +171,31 @@ def create_dirs():
     _resolve_directory(
         "PUBLISH_DIR",
         fallback=(d["OUTPUT_DIR"] / "publish").resolve(),
+def create_dirs():
+    ## If they don't exist, create the _data and _output directories
+    d["DATA_DIR"] = _ensure_dir(
+        d["DATA_DIR"],
+        fallback=(d["BASE_DIR"] / "_data").resolve(),
+        label="DATA_DIR",
+    )
+    d["OUTPUT_DIR"] = _ensure_dir(
+        d["OUTPUT_DIR"],
+        fallback=(d["BASE_DIR"] / "_output").resolve(),
+        label="OUTPUT_DIR",
+    )
+    d["MANUAL_DATA_DIR"] = _ensure_dir(
+        d["MANUAL_DATA_DIR"],
+        fallback=(d["BASE_DIR"] / "data_manual").resolve(),
+        label="MANUAL_DATA_DIR",
+    )
+    d["PUBLISH_DIR"] = _ensure_dir(
+        d["PUBLISH_DIR"],
+        fallback=(d["OUTPUT_DIR"] / "publish").resolve(),
+        label="PUBLISH_DIR",
     )
     # (d["BASE_DIR"] / "_docs").mkdir(parents=True, exist_ok=True)
+
+    _update_directory_globals()
 
 
 if __name__ == "__main__":
