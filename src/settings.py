@@ -77,10 +77,22 @@ d["PIPELINE_DEV_MODE"] = _config("PIPELINE_DEV_MODE", default=True, cast=bool)
 d["PIPELINE_THEME"] = _config("PIPELINE_THEME", default="pipeline")
 
 ## Paths
-d["DATA_DIR"] = if_relative_make_abs(_config('DATA_DIR', default=Path('_data'), cast=Path))
-d["MANUAL_DATA_DIR"] = if_relative_make_abs(_config('MANUAL_DATA_DIR', default=Path('data_manual'), cast=Path))
-d["OUTPUT_DIR"] = if_relative_make_abs(_config('OUTPUT_DIR', default=Path('_output'), cast=Path))
-d["PUBLISH_DIR"] = if_relative_make_abs(_config('PUBLISH_DIR', default=Path('_output/publish'), cast=Path))
+d["DATA_DIR"] = if_relative_make_abs(_config("DATA_DIR", default=Path("_data"), cast=Path))
+d["MANUAL_DATA_DIR"] = if_relative_make_abs(
+    _config("MANUAL_DATA_DIR", default=Path("data_manual"), cast=Path)
+)
+d["OUTPUT_DIR"] = if_relative_make_abs(_config("OUTPUT_DIR", default=Path("_output"), cast=Path))
+d["PUBLISH_DIR"] = if_relative_make_abs(
+    _config("PUBLISH_DIR", default=Path("_output/publish"), cast=Path)
+)
+
+# Expose commonly imported directory constants up-front so that modules using
+# ``from settings import DATA_DIR`` succeed even if directory resolution
+# happens later during module import.
+DATA_DIR: Path = d["DATA_DIR"]
+MANUAL_DATA_DIR: Path = d["MANUAL_DATA_DIR"]
+OUTPUT_DIR: Path = d["OUTPUT_DIR"]
+PUBLISH_DIR: Path = d["PUBLISH_DIR"]
 # fmt: on
 
 
