@@ -19,6 +19,7 @@ over to the other configuration, for example.
 """
 
 from pathlib import Path
+import warnings
 
 ## Helper for determining OS
 from platform import system
@@ -76,10 +77,22 @@ d["PIPELINE_DEV_MODE"] = _config("PIPELINE_DEV_MODE", default=True, cast=bool)
 d["PIPELINE_THEME"] = _config("PIPELINE_THEME", default="pipeline")
 
 ## Paths
-d["DATA_DIR"] = if_relative_make_abs(_config('DATA_DIR', default=Path('_data'), cast=Path))
-d["MANUAL_DATA_DIR"] = if_relative_make_abs(_config('MANUAL_DATA_DIR', default=Path('data_manual'), cast=Path))
-d["OUTPUT_DIR"] = if_relative_make_abs(_config('OUTPUT_DIR', default=Path('_output'), cast=Path))
-d["PUBLISH_DIR"] = if_relative_make_abs(_config('PUBLISH_DIR', default=Path('_output/publish'), cast=Path))
+d["DATA_DIR"] = if_relative_make_abs(_config("DATA_DIR", default=Path("_data"), cast=Path))
+d["MANUAL_DATA_DIR"] = if_relative_make_abs(
+    _config("MANUAL_DATA_DIR", default=Path("data_manual"), cast=Path)
+)
+d["OUTPUT_DIR"] = if_relative_make_abs(_config("OUTPUT_DIR", default=Path("_output"), cast=Path))
+d["PUBLISH_DIR"] = if_relative_make_abs(
+    _config("PUBLISH_DIR", default=Path("_output/publish"), cast=Path)
+)
+
+# Expose commonly imported directory constants up-front so that modules using
+# ``from settings import DATA_DIR`` succeed even if directory resolution
+# happens later during module import.
+DATA_DIR: Path = d["DATA_DIR"]
+MANUAL_DATA_DIR: Path = d["MANUAL_DATA_DIR"]
+OUTPUT_DIR: Path = d["OUTPUT_DIR"]
+PUBLISH_DIR: Path = d["PUBLISH_DIR"]
 # fmt: on
 
 
@@ -117,12 +130,66 @@ def config(*args, **kwargs):
     return var
 
 
+def _ensure_dir(path: Path, *, fallback: Path, label: str) -> Path:
+    """Create ``path`` if possible, otherwise fall back to ``fallback``.
+
+    The helper keeps ``settings.d`` consistent by returning the directory that
+    ultimately exists so callers can update their configuration mapping.
+    """
+
+    path = Path(path).resolve()
+    fallback = Path(fallback).resolve()
+
+    try:
+        path.mkdir(parents=True, exist_ok=True)
+    except (PermissionError, FileNotFoundError) as exc:
+        fallback.mkdir(parents=True, exist_ok=True)
+        warnings.warn(
+            (
+                f"Could not create {label} at {path}. "
+                f"Falling back to {fallback}. ({exc})"
+            ),
+            RuntimeWarning,
+            stacklevel=2,
+        )
+        return fallback
+    else:
+        return path
+
+
+def _resolve_directory(key: str, *, fallback: Path) -> Path:
+    """Resolve a configured directory and update module globals."""
+
+    resolved = _ensure_dir(d[key], fallback=fallback, label=key)
+    d[key] = resolved
+    globals()[key] = resolved
+    return resolved
+
+
 def create_dirs():
     ## If they don't exist, create the _data and _output directories
-    d["DATA_DIR"].mkdir(parents=True, exist_ok=True)
-    d["OUTPUT_DIR"].mkdir(parents=True, exist_ok=True)
+    _resolve_directory(
+        "DATA_DIR",
+        fallback=(d["BASE_DIR"] / "_data").resolve(),
+    )
+    _resolve_directory(
+        "OUTPUT_DIR",
+        fallback=(d["BASE_DIR"] / "_output").resolve(),
+    )
+    _resolve_directory(
+        "MANUAL_DATA_DIR",
+        fallback=(d["BASE_DIR"] / "data_manual").resolve(),
+    )
+    _resolve_directory(
+        "PUBLISH_DIR",
+        fallback=(d["OUTPUT_DIR"] / "publish").resolve(),
+    )
     # (d["BASE_DIR"] / "_docs").mkdir(parents=True, exist_ok=True)
 
 
+create_dirs()
+
 if __name__ == "__main__":
-    create_dirs()
+    # Running the module directly simply ensures the directories already
+    # created during import remain available for manual inspection.
+    pass
