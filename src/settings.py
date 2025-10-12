@@ -171,6 +171,12 @@ def create_dirs():
     _resolve_directory(
         "PUBLISH_DIR",
         fallback=(d["OUTPUT_DIR"] / "publish").resolve(),
+    )
+
+    _resolve_directory(
+        "BASE_DIR",
+        fallback=Path.cwd().resolve(),
+    )
 def create_dirs():
     ## If they don't exist, create the _data and _output directories
     d["DATA_DIR"] = _ensure_dir(
@@ -195,7 +201,7 @@ def create_dirs():
     )
     # (d["BASE_DIR"] / "_docs").mkdir(parents=True, exist_ok=True)
 
-    _update_directory_globals()
+    # _update_directory_globals()
 
 
 if __name__ == "__main__":
