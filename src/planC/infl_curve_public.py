@@ -11,8 +11,9 @@ from __future__ import annotations
 import math
 import os
 import re
+import warnings
 from dataclasses import dataclass
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Iterable, List, Optional, Sequence
 from urllib.error import HTTPError, URLError
@@ -28,11 +29,16 @@ __all__ = [
     "download_clevelandfed_term_structure",
     "load_clevelandfed_term_structure",
     "load_clevelandfed_zero_coupon_inflation",
+    "ClevelandFedClient",
+    "InflationCurveQuery",
+    "make_sample_inflation_curve",
 ]
 
 _ENV_URL_KEY = "CLEVELANDFED_TERM_STRUCTURE_URL"
 _DEFAULT_RAW_FILENAME = "ie-term-structure-data.xlsx"
 _DEFAULT_PARQUET_FILENAME = "clevelandfed_inflation_term_structure.parquet"
+_API_LOOKBACK_YEARS = 30
+_API_DEFAULT_HORIZONS: Sequence[int] = tuple(range(1, 31))
 
 
 def _storage_dir(data_dir: Path) -> Path:
@@ -53,6 +59,11 @@ def _candidate_urls() -> List[str]:
         f"https://www.clevelandfed.org/-/media/project/clevelandfedten/fedcom/sections/data/inflation-expectations/{year - 1}/ie-term-structure-data.xlsx",
         "https://www.clevelandfed.org/-/media/content/indicators-and-data/inflation-expectations/ie-term-structure-data.xlsx",
         "https://www.clevelandfed.org/~/media/project/clevelandfedten/fedcom/sections/data/inflation-expectations/latest/ie-term-structure-data.xlsx",
+        "https://www.clevelandfed.org/-/media/project/clevelandfedten/research/data/inflation-expectations/latest/ie-term-structure-data.xlsx",
+        f"https://www.clevelandfed.org/-/media/project/clevelandfedten/research/data/inflation-expectations/{year}/ie-term-structure-data.xlsx",
+        f"https://www.clevelandfed.org/-/media/project/clevelandfedten/research/data/inflation-expectations/{year - 1}/ie-term-structure-data.xlsx",
+        "https://www.clevelandfed.org/-/media/project/clevelandfedten/research/data/inflation-expectations/resources/ie-term-structure-data.xlsx",
+        "https://www.clevelandfed.org/-/media/project/clevelandfedten/publications/inflation-expectations/latest/ie-term-structure-data.xlsx",
     ]
     # Preserve order but drop duplicates.
     return list(dict.fromkeys(base_paths))
@@ -73,6 +84,33 @@ def _download_candidate(url: str, destination: Path, timeout: int = 30) -> None:
     with urlopen(request, **stream_kwargs) as resp:  # type: ignore[arg-type]
         data = resp.read()
     destination.write_bytes(data)
+
+
+def _load_panel_from_api(horizons: Sequence[int] = _API_DEFAULT_HORIZONS) -> pd.DataFrame:
+    """Build a zero-coupon panel directly from the Cleveland Fed JSON API."""
+
+    end = date.today()
+    start = end - timedelta(days=365 * _API_LOOKBACK_YEARS)
+    query = InflationCurveQuery(start_date=start, end_date=end, horizons=horizons)
+    client = ClevelandFedClient()
+    frame = client.fetch_curve(query)
+    if frame.empty:
+        raise RuntimeError("Cleveland Fed JSON API returned no inflation observations.")
+
+    pivot = (
+        frame.pivot_table(
+            index="date",
+            columns="maturity",
+            values="inflation",
+            aggfunc="mean",
+        )
+        .sort_index()
+        .sort_index(axis=1)
+    )
+    pivot.index = pd.to_datetime(pivot.index)
+    pivot.columns = pivot.columns.astype(float)
+    pivot = pivot.loc[:, sorted(pivot.columns)]
+    return pivot
 
 
 def download_clevelandfed_term_structure(
@@ -371,22 +409,38 @@ def load_clevelandfed_term_structure(
     excel_path = base / _DEFAULT_RAW_FILENAME
 
     if refresh or not parquet_path.exists():
+        panel: Optional[pd.DataFrame] = None
         if refresh or not excel_path.exists():
-            excel_path = download_clevelandfed_term_structure(
-                data_dir, urls=urls, force=refresh
-            )
-        try:
-            panel = parse_clevelandfed_term_structure(excel_path)
-        except FileNotFoundError as exc:
-            raise RuntimeError(
-                "Cleveland Fed term-structure file is missing. Expected to find "
-                f"{excel_path}."
-            ) from exc
-        except Exception as exc:
-            raise RuntimeError(
-                "Unable to parse the Cleveland Fed inflation expectations "
-                f"workbook at {excel_path}: {exc}"
-            ) from exc
+            try:
+                excel_path = download_clevelandfed_term_structure(
+                    data_dir, urls=urls, force=refresh
+                )
+            except RuntimeError as download_error:
+                warnings.warn(
+                    "Falling back to the Cleveland Fed JSON API because the "
+                    "term-structure workbook could not be downloaded. "
+                    f"({download_error})",
+                    RuntimeWarning,
+                    stacklevel=2,
+                )
+                panel = _load_panel_from_api()
+        if panel is None:
+            try:
+                panel = parse_clevelandfed_term_structure(excel_path)
+            except FileNotFoundError as exc:
+                raise RuntimeError(
+                    "Cleveland Fed term-structure file is missing. Expected to "
+                    f"find {excel_path}."
+                ) from exc
+            except Exception as exc:
+                warnings.warn(
+                    "Falling back to the Cleveland Fed JSON API because the "
+                    "term-structure workbook could not be parsed. "
+                    f"({exc})",
+                    RuntimeWarning,
+                    stacklevel=2,
+                )
+                panel = _load_panel_from_api()
         panel.to_parquet(parquet_path, compression="snappy")
     else:
         panel = pd.read_parquet(parquet_path)
@@ -481,4 +535,3 @@ def make_sample_inflation_curve(dates: Iterable[pd.Timestamp], horizons: Sequenc
     return pd.DataFrame(out)
 
 
-__all__ = ["ClevelandFedClient", "InflationCurveQuery", "make_sample_inflation_curve"]

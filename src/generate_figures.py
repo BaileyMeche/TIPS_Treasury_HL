@@ -4,10 +4,8 @@ import pandas as pd
 import numpy as np
 from statsmodels.regression.linear_model import OLS
 from statsmodels.tools.tools import add_constant
-from decouple import config
 
-DATA_DIR = config('DATA_DIR')
-OUTPUT_DIR = config("OUTPUT_DIR")
+from settings import DATA_DIR, OUTPUT_DIR
 
 def load_tips_treasury_data(file_path="/tips_treasury_implied_rf.parquet",
                            filter_columns=True
