@@ -184,12 +184,15 @@ def create_dirs():
         "PUBLISH_DIR",
         fallback=(d["OUTPUT_DIR"] / "publish").resolve(),
     )
-    # (d["BASE_DIR"] / "_docs").mkdir(parents=True, exist_ok=True)
 
+    _resolve_directory(
+        "BASE_DIR",
+        fallback=Path.cwd().resolve(),
+    )
 
 create_dirs()
 
+
 if __name__ == "__main__":
-    # Running the module directly simply ensures the directories already
-    # created during import remain available for manual inspection.
+    create_dirs()
     pass

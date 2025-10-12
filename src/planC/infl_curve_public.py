@@ -39,8 +39,6 @@ _DEFAULT_RAW_FILENAME = "ie-term-structure-data.xlsx"
 _DEFAULT_PARQUET_FILENAME = "clevelandfed_inflation_term_structure.parquet"
 _API_LOOKBACK_YEARS = 30
 _API_DEFAULT_HORIZONS: Sequence[int] = tuple(range(1, 31))
-_SAMPLE_START_DATE = date(2022, 1, 3)
-_SAMPLE_HORIZONS: Sequence[int] = (1, 2, 3, 5, 7, 10, 20, 30)
 
 
 def _storage_dir(data_dir: Path) -> Path:
@@ -112,52 +110,6 @@ def _load_panel_from_api(horizons: Sequence[int] = _API_DEFAULT_HORIZONS) -> pd.
     pivot.index = pd.to_datetime(pivot.index)
     pivot.columns = pivot.columns.astype(float)
     pivot = pivot.loc[:, sorted(pivot.columns)]
-    return pivot
-
-
-def _load_embedded_sample() -> pd.DataFrame:
-    """Provide a deterministic offline sample of the inflation term structure."""
-
-    warnings.warn(
-        "Using bundled Cleveland Fed sample inflation expectations data. "
-        "Results are illustrative only.",
-        RuntimeWarning,
-        stacklevel=2,
-    )
-
-    rows: list[dict[str, float | date]] = []
-    horizon_values = [float(h) for h in _SAMPLE_HORIZONS]
-    current = _SAMPLE_START_DATE
-    end = date.today()
-    while current <= end:
-        if current.weekday() < 5:
-            day_index = (current - _SAMPLE_START_DATE).days
-            for maturity in horizon_values:
-                base = 0.02 + 0.00005 * math.sin(day_index / 20.0)
-                slope = 0.0004 * math.log1p(maturity)
-                seasonal = 0.0001 * math.cos(day_index / 91.0)
-                rows.append(
-                    {
-                        "date": current,
-                        "maturity": maturity,
-                        "inflation": base + slope + seasonal,
-                    }
-                )
-        current += timedelta(days=1)
-
-    frame = pd.DataFrame.from_records(rows)
-    pivot = (
-        frame.pivot_table(
-            index="date",
-            columns="maturity",
-            values="inflation",
-            aggfunc="mean",
-        )
-        .sort_index()
-        .sort_index(axis=1)
-    )
-    pivot.index = pd.to_datetime(pivot.index)
-    pivot.columns = pivot.columns.astype(float)
     return pivot
 
 
@@ -458,16 +410,12 @@ def load_clevelandfed_term_structure(
 
     if refresh or not parquet_path.exists():
         panel: Optional[pd.DataFrame] = None
-        fallback_errors: list[str] = []
-
-        need_download = refresh or not excel_path.exists()
-        if need_download:
+        if refresh or not excel_path.exists():
             try:
                 excel_path = download_clevelandfed_term_structure(
                     data_dir, urls=urls, force=refresh
                 )
             except RuntimeError as download_error:
-                fallback_errors.append(str(download_error))
                 warnings.warn(
                     "Falling back to the Cleveland Fed JSON API because the "
                     "term-structure workbook could not be downloaded. "
@@ -475,16 +423,16 @@ def load_clevelandfed_term_structure(
                     RuntimeWarning,
                     stacklevel=2,
                 )
-                try:
-                    panel = _load_panel_from_api()
-                except Exception as api_error:  # pragma: no cover - network failure
-                    fallback_errors.append(f"API: {api_error}")
-
-        if panel is None and excel_path.exists():
+                panel = _load_panel_from_api()
+        if panel is None:
             try:
                 panel = parse_clevelandfed_term_structure(excel_path)
+            except FileNotFoundError as exc:
+                raise RuntimeError(
+                    "Cleveland Fed term-structure file is missing. Expected to "
+                    f"find {excel_path}."
+                ) from exc
             except Exception as exc:
-                fallback_errors.append(str(exc))
                 warnings.warn(
                     "Falling back to the Cleveland Fed JSON API because the "
                     "term-structure workbook could not be parsed. "
@@ -492,21 +440,7 @@ def load_clevelandfed_term_structure(
                     RuntimeWarning,
                     stacklevel=2,
                 )
-                try:
-                    panel = _load_panel_from_api()
-                except Exception as api_error:  # pragma: no cover - network failure
-                    fallback_errors.append(f"API: {api_error}")
-
-        if panel is None:
-            try:
-                panel = _load_embedded_sample()
-            except Exception as sample_error:  # pragma: no cover - deterministic
-                detail = "; ".join(fallback_errors) or "No fallback data available."
-                raise RuntimeError(
-                    "Unable to retrieve Cleveland Fed inflation expectations data. "
-                    f"Failures encountered: {detail}"
-                ) from sample_error
-
+                panel = _load_panel_from_api()
         panel.to_parquet(parquet_path, compression="snappy")
     else:
         panel = pd.read_parquet(parquet_path)

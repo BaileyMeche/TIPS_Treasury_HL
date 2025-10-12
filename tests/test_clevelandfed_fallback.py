@@ -1,7 +1,6 @@
 from datetime import date
 from pathlib import Path
 import sys
-from urllib.error import HTTPError
 
 import pandas as pd
 import pytest
@@ -42,24 +41,3 @@ def test_clevelandfed_json_fallback(monkeypatch, tmp_path):
     assert len(panel) == 2
     parquet_path = tmp_path / "clevelandfed" / "clevelandfed_inflation_term_structure.parquet"
     assert parquet_path.exists()
-
-
-def test_clevelandfed_sample_fallback(monkeypatch, tmp_path):
-    def fail_download(*args, **kwargs):  # pragma: no cover - exercised via fallback
-        raise RuntimeError("download failed")
-
-    def fail_api(*args, **kwargs):  # pragma: no cover - exercised via fallback
-        raise HTTPError(url="https://example.com", code=404, msg="not found", hdrs=None, fp=None)
-
-    monkeypatch.setattr(module, "download_clevelandfed_term_structure", fail_download)
-    monkeypatch.setattr(module, "_load_panel_from_api", fail_api)
-
-    with pytest.warns(RuntimeWarning):
-        panel = module.load_clevelandfed_zero_coupon_inflation(
-            tmp_path, [2, 5, 10, 20], refresh=True
-        )
-
-    assert {"inf_swap_2y", "inf_swap_5y", "inf_swap_10y", "inf_swap_20y"}.issubset(
-        panel.columns
-    )
-    assert len(panel) >= 10
