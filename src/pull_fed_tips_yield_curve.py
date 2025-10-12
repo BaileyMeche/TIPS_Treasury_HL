@@ -1,15 +1,27 @@
-import pandas as pd
-import requests
+from datetime import datetime
 from io import BytesIO
 from pathlib import Path
 
+import pandas as pd
+import requests
+
 from settings import config
-DATA_DIR = config('DATA_DIR')
+
+DATA_DIR = config("DATA_DIR")
 
 # Define the URL for the TIPS yield data
 TIPS_URL = "https://www.federalreserve.gov/data/yield-curve-tables/feds200805.csv"
 
-def pull_fed_tips_yield_curve():
+
+def _cutoff_date(years: int, today: datetime | None = None) -> pd.Timestamp:
+    if today is None:
+        today_ts = pd.Timestamp.today().normalize()
+    else:
+        today_ts = pd.Timestamp(today).normalize()
+    return today_ts - pd.DateOffset(years=years)
+
+
+def pull_fed_tips_yield_curve(years: int = 3, today: datetime | None = None):
     """
     Download and process the latest zero-coupon TIPS yield curve from the Federal Reserve.
 
@@ -29,27 +41,18 @@ def pull_fed_tips_yield_curve():
     
     # Read CSV while skipping the first 19 rows (metadata)
     df = pd.read_csv(BytesIO(response.content), skiprows=18)
-    
-    # Convert 'Date' column to datetime format
-    #df.rename(columns={'Date': 'date'}, inplace=True)
-    #df['date'] = pd.to_datetime(df['date'], format="%Y%m%d", errors='coerce')
+    if "Date" not in df.columns:
+        raise ValueError("Expected a 'Date' column in the TIPS yield data")
 
-    # List of relevant columns (for 2y, 5y, 10y, 20y TIPS yields)
-    #maturity_cols = ['TIPS_Treasury_02Y', 'TIPS_Treasury_05Y', 'TIPS_Treasury_10Y', 'TIPS_Treasury_20Y']
-    
-    # Select necessary columns
-    #df_yields = df[['date'] + maturity_cols].copy()
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+    df = df.dropna(subset=["Date"])
 
-    # Convert yields from percentage to decimal
-    #for col in maturity_cols:
-    #    df_yields[col] = pd.to_numeric(df_yields[col], errors='coerce') / 100.0
-    
-    # Drop missing date rows
-    #df_yields.dropna(subset=['date'], inplace=True)
+    cutoff = _cutoff_date(years, today)
+    df = df[df["Date"] >= cutoff].copy()
 
-    # Sort by date for time series consistency
-    #df_yields.sort_values(by='date', inplace=True)
-    
+    df = df.rename(columns={"Date": "date"})
+    df = df.sort_values("date")
+
     return df
 
 def save_tips_yield_curve(df, data_dir):
@@ -57,7 +60,7 @@ def save_tips_yield_curve(df, data_dir):
     Save the TIPS yield curve DataFrame to a parquet file.
     """
     path = Path(data_dir) / "fed_tips_yield_curve.parquet"
-    df.to_parquet(path)
+    df.to_parquet(path, index=False)
 
 def load_tips_yield_curve(data_dir):
     """
@@ -71,20 +74,27 @@ def load_tips_yield_curve(data_dir):
     """
     path = Path(data_dir) / "fed_tips_yield_curve.parquet"
     df = pd.read_parquet(path)
-    
+
+    if "date" not in df.columns:
+        raise ValueError("Expected a 'date' column in cached TIPS data")
+
     # Select only the required columns (ignoring TIPSY30)
-    selected_cols = ['TIPSY02', 'TIPSY05', 'TIPSY10', 'TIPSY20']
-    df = df[selected_cols]
-    
+    selected_cols = ["TIPSY02", "TIPSY05", "TIPSY10", "TIPSY20"]
+    df = df[["date"] + selected_cols]
+
     # Rename the selected columns as specified.
     rename_mapping = {
-        'TIPSY02': 'TIPS_Treasury_02Y',
-        'TIPSY05': 'TIPS_Treasury_05Y',
-        'TIPSY10': 'TIPS_Treasury_10Y',
-        'TIPSY20': 'TIPS_Treasury_20Y'
+        "TIPSY02": "TIPS_Treasury_02Y",
+        "TIPSY05": "TIPS_Treasury_05Y",
+        "TIPSY10": "TIPS_Treasury_10Y",
+        "TIPSY20": "TIPS_Treasury_20Y",
     }
     df = df.rename(columns=rename_mapping)
-    
+
+    df["date"] = pd.to_datetime(df["date"], errors="coerce")
+    df = df.dropna(subset=["date"])
+    df = df.sort_values("date")
+
     return df
 
 # Example usage
