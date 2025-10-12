@@ -438,22 +438,30 @@ def _compute_enrichment(trades: pd.DataFrame, summary: pd.DataFrame) -> pd.DataF
     maturity = summary.set_index("trade_dt")["avg_years_to_maturity"].rename("maturity_years")
     tenor = maturity.apply(_tenor_label).rename("tenor_label")
 
-    enriched = (
-        pd.concat(
-            [
-                futures.rename("futures_involved"),
-                ats.rename("ats"),
-                capacity,
-                on_the_run.rename("on_the_run"),
-                maturity,
-                tenor,
-            ],
-            axis=1,
-        )
-        .reset_index()
-        .rename(columns={"trade_date": "date"})
-        .sort_values("date")
+    enriched = pd.concat(
+        [
+            futures.rename("futures_involved"),
+            ats.rename("ats"),
+            capacity,
+            on_the_run.rename("on_the_run"),
+            maturity,
+            tenor,
+        ],
+        axis=1,
+    ).reset_index()
+
+    enriched = enriched.rename(
+        columns={
+            "trade_date": "date",
+            "trade_dt": "date",
+            "index": "date",
+        }
     )
+
+    if "date" not in enriched.columns:
+        raise KeyError("Expected a date column in the enriched panel output.")
+
+    enriched = enriched.sort_values("date")
     return enriched
 
 

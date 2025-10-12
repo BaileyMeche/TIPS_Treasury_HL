@@ -152,13 +152,35 @@ def task_pull_fed_tips_yield_curve():
         "clean": [],
     }
 
-def task_compute_tips_treasury():
-    """ """
+# def task_compute_tips_treasury():
+#     """Disabled: superseded by ``task_compute_tips_treasury_manual``."""
+#     file_dep = [
+#         "./src/compute_tips_treasury.py",
+#     ]
+#     targets = [
+#         OUTPUT_DIR / "tips_treasury_implied_rf.parquet",
+#     ]
+#
+#     return {
+#         "actions": [
+#             "ipython ./src/compute_tips_treasury.py",
+#         ],
+#         "targets": targets,
+#         "file_dep": file_dep,
+#         "clean": [],
+#     }
+
+
+def task_compute_tips_treasury_manual():
+    """Build TIPS-Treasury series using manually curated inflation swaps."""
+
     file_dep = [
         "./src/compute_tips_treasury.py",
+        "./src/manual_inflation_swaps.py",
+        MANUAL_DATA_DIR / "treasury_inflation_swaps.csv",
     ]
     targets = [
-        OUTPUT_DIR / "tips_treasury_implied_rf.parquet",
+        DATA_DIR / "tips_treasury_implied_rf.parquet",
     ]
 
     return {
@@ -178,7 +200,10 @@ def task_generate_figures():
     ]
     file_output = [
         "tips_treasury_spreads.png",
+        "tips_treasury_spreads_mispricing.png",
         "tips_treasury_summary_stats.csv",
+        "mispricing_events.csv",
+        "mispricing_report.html",
         'tips_treasury_summary_table.tex'
     ]
     targets = [OUTPUT_DIR / file for file in file_output]

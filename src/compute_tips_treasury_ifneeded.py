@@ -4,8 +4,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from planC.infl_curve_public import load_clevelandfed_zero_coupon_inflation
-from settings import DATA_DIR, OUTPUT_DIR
+from manual_inflation_swaps import load_manual_inflation_swaps
+from settings import DATA_DIR
 
 
 # ------------------------------------------------------------------------------
@@ -13,15 +13,15 @@ from settings import DATA_DIR, OUTPUT_DIR
 # ------------------------------------------------------------------------------
 def import_inflation_expectations():
         maturities = [2, 5, 10, 20]
-        try:
-                swaps = load_clevelandfed_zero_coupon_inflation(DATA_DIR, maturities)
-        except RuntimeError as exc:
+        swaps = load_manual_inflation_swaps()
+
+        available = {int(column.split("_")[2][:-1]) for column in swaps.columns if column != "date"}
+        missing = sorted(set(maturities) - available)
+        if missing:
                 raise RuntimeError(
-                        "Unable to load Cleveland Fed inflation expectations term "
-                        "structure required for the synthetic nominal construction. "
-                        "Download the workbook from the Cleveland Fed website and place "
-                        "it in the data directory specified by DATA_DIR before rerunning."
-                ) from exc
+                        "Manual inflation swap data is missing required tenors: "
+                        + ", ".join(f"{tenor}Y" for tenor in missing)
+                )
 
         output_path = Path(DATA_DIR) / "clevelandfed_zero_coupon_inflation.parquet"
         output_path.parent.mkdir(parents=True, exist_ok=True)
