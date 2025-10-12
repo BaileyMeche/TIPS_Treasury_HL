@@ -9,6 +9,13 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 import settings as settings
 
 
+def test_directory_constants_are_exported():
+    for name in ("DATA_DIR", "OUTPUT_DIR", "MANUAL_DATA_DIR", "PUBLISH_DIR"):
+        value = getattr(settings, name)
+        assert isinstance(value, Path)
+        assert settings.d[name] == value
+
+
 def test_ensure_dir_creates_primary(tmp_path):
     target = tmp_path / "primary"
 
