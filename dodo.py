@@ -11,7 +11,9 @@ import sys
 
 sys.path.insert(1, "./src/")
 
+import os
 import shutil
+import subprocess
 from os import environ, getcwd, path
 from pathlib import Path
 
@@ -59,6 +61,33 @@ if not in_slurm:
 else:
     DOIT_CONFIG = {"backend": "sqlite3", "dep_file": "./.doit-db.sqlite"}
 init(autoreset=True)
+
+
+def _build_pythonpath_env(extra_env: dict | None = None) -> dict:
+    """Return an environment mapping that ensures ``src`` is on ``PYTHONPATH``."""
+
+    env = os.environ.copy()
+    src_path = str((Path("src")).resolve())
+    pythonpath = env.get("PYTHONPATH")
+    if pythonpath:
+        paths = pythonpath.split(os.pathsep)
+        if src_path not in paths:
+            env["PYTHONPATH"] = os.pathsep.join([src_path, pythonpath])
+    else:
+        env["PYTHONPATH"] = src_path
+    if extra_env:
+        env.update(extra_env)
+    return env
+
+
+def run_python_module(module: str, *args: object, env: dict | None = None):
+    """Return a callable action that runs ``python -m module`` with arguments."""
+
+    def _runner() -> None:
+        cmd = [sys.executable, "-m", module, *[str(arg) for arg in args]]
+        subprocess.run(cmd, check=True, env=_build_pythonpath_env(env))
+
+    return _runner
 
 
 BASE_DIR = config("BASE_DIR")
@@ -253,7 +282,16 @@ def task_planC_novendor():
 
     return {
         'actions': [
-            f"PYTHONPATH=src python -m planC.pipeline --novendor --start 2023-01-01 --end 2023-01-05 --output-dir {output_dir}",
+            run_python_module(
+                'planC.pipeline',
+                '--novendor',
+                '--start',
+                '2023-01-01',
+                '--end',
+                '2023-01-05',
+                '--output-dir',
+                output_dir,
+            ),
         ],
         'file_dep': file_dep,
         'targets': targets,
@@ -288,14 +326,20 @@ def task_planC_proof_of_concept():
         if report_path.exists():
             report_path.unlink()
 
-    command = (
-        "PYTHONPATH=src python -m planC.proof_of_concept "
-        "--start 2023-01-01 --end 2023-01-31 "
-        f"--output-dir {output_dir} --report {report_path}"
-    )
-
     return {
-        "actions": [command],
+        "actions": [
+            run_python_module(
+                'planC.proof_of_concept',
+                '--start',
+                '2023-01-01',
+                '--end',
+                '2023-01-31',
+                '--output-dir',
+                output_dir,
+                '--report',
+                report_path,
+            )
+        ],
         "file_dep": file_dep,
         "targets": [figure_path, summary_path, report_path],
         "clean": [_clean],
