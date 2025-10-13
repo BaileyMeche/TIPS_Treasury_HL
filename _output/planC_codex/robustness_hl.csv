@@ -1,0 +1,289 @@
+tenor,cfg_id,span,winsor,demean,detrend,subperiod,hl_ar1_days,rho,notes
+2,cfg_001,10,False,none,False,full,2.139833214566884,0.7233039113422535,
+2,cfg_002,10,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_003,10,False,none,False,2022_plus,2.139833214566884,0.7233039113422535,
+2,cfg_004,10,False,none,True,full,2.1143243003054724,0.7204826821702113,
+2,cfg_005,10,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_006,10,False,none,True,2022_plus,2.1143243003054724,0.7204826821702113,
+2,cfg_007,10,False,monthly,False,full,0.9708586944188501,0.4897047139150384,
+2,cfg_008,10,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_009,10,False,monthly,False,2022_plus,0.9708586944188501,0.4897047139150384,
+2,cfg_010,10,False,monthly,True,full,0.9708427903067303,0.48969898645984156,
+2,cfg_011,10,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_012,10,False,monthly,True,2022_plus,0.9708427903067303,0.48969898645984156,
+2,cfg_013,10,True,none,False,full,2.151395062685899,0.7245641462661111,
+2,cfg_014,10,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_015,10,True,none,False,2022_plus,2.151395062685899,0.7245641462661111,
+2,cfg_016,10,True,none,True,full,2.125493190102786,0.7217249116248599,
+2,cfg_017,10,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_018,10,True,none,True,2022_plus,2.125493190102786,0.7217249116248599,
+2,cfg_019,10,True,monthly,False,full,0.9677926000165498,0.48859830446973085,
+2,cfg_020,10,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_021,10,True,monthly,False,2022_plus,0.9677926000165498,0.48859830446973085,
+2,cfg_022,10,True,monthly,True,full,0.9677763472042463,0.4885924276005423,
+2,cfg_023,10,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_024,10,True,monthly,True,2022_plus,0.9677763472042463,0.4885924276005423,
+2,cfg_025,20,False,none,False,full,5.302954122801063,0.8774725275684546,
+2,cfg_026,20,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_027,20,False,none,False,2022_plus,5.302954122801063,0.8774725275684546,
+2,cfg_028,20,False,none,True,full,5.205966824403284,0.8753383727953662,
+2,cfg_029,20,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_030,20,False,none,True,2022_plus,5.205966824403284,0.8753383727953662,
+2,cfg_031,20,False,monthly,False,full,1.3495132203212776,0.5983211921938567,
+2,cfg_032,20,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_033,20,False,monthly,False,2022_plus,1.3495132203212776,0.5983211921938567,
+2,cfg_034,20,False,monthly,True,full,1.3494856192803373,0.5983149067258173,
+2,cfg_035,20,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_036,20,False,monthly,True,2022_plus,1.3494856192803373,0.5983149067258173,
+2,cfg_037,20,True,none,False,full,5.351300420150265,0.8785093430150562,
+2,cfg_038,20,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_039,20,True,none,False,2022_plus,5.351300420150265,0.8785093430150562,
+2,cfg_040,20,True,none,True,full,5.2528109196401225,0.8763783431979557,
+2,cfg_041,20,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_042,20,True,none,True,2022_plus,5.2528109196401225,0.8763783431979557,
+2,cfg_043,20,True,monthly,False,full,1.3430075323716915,0.5968343758830745,
+2,cfg_044,20,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_045,20,True,monthly,False,2022_plus,1.3430075323716915,0.5968343758830745,
+2,cfg_046,20,True,monthly,True,full,1.3429793594696653,0.5968279139755619,
+2,cfg_047,20,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_048,20,True,monthly,True,2022_plus,1.3429793594696653,0.5968279139755619,
+2,cfg_049,60,False,none,False,full,21.76808725255353,0.9686592735072205,
+2,cfg_050,60,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_051,60,False,none,False,2022_plus,21.76808725255353,0.9686592735072205,
+2,cfg_052,60,False,none,True,full,20.934590094529465,0.967432002068764,
+2,cfg_053,60,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_054,60,False,none,True,2022_plus,20.934590094529465,0.967432002068764,
+2,cfg_055,60,False,monthly,False,full,1.7031528449626043,0.6656582710360652,
+2,cfg_056,60,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_057,60,False,monthly,False,2022_plus,1.7031528449626043,0.6656582710360652,
+2,cfg_058,60,False,monthly,True,full,1.7031236925350113,0.6656536338962408,
+2,cfg_059,60,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_060,60,False,monthly,True,2022_plus,1.7031236925350113,0.6656536338962408,
+2,cfg_061,60,True,none,False,full,22.03062075599996,0.9690269083224117,
+2,cfg_062,60,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_063,60,True,none,False,2022_plus,22.03062075599996,0.9690269083224117,
+2,cfg_064,60,True,none,True,full,21.18422973223927,0.9678095456087792,
+2,cfg_065,60,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_066,60,True,none,True,2022_plus,21.18422973223927,0.9678095456087792,
+2,cfg_067,60,True,monthly,False,full,1.6952691119046017,0.6643996194804067,
+2,cfg_068,60,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_069,60,True,monthly,False,2022_plus,1.6952691119046017,0.6643996194804067,
+2,cfg_070,60,True,monthly,True,full,1.6952393745699148,0.6643948542309638,
+2,cfg_071,60,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+2,cfg_072,60,True,monthly,True,2022_plus,1.6952393745699148,0.6643948542309638,
+5,cfg_001,10,False,none,False,full,1.1413161285938016,0.5448075372762675,
+5,cfg_002,10,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_003,10,False,none,False,2022_plus,1.1413161285938016,0.5448075372762675,
+5,cfg_004,10,False,none,True,full,1.1262614672358493,0.5404026706709766,
+5,cfg_005,10,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_006,10,False,none,True,2022_plus,1.1262614672358493,0.5404026706709766,
+5,cfg_007,10,False,monthly,False,full,0.6328307640815053,0.33443522008264337,
+5,cfg_008,10,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_009,10,False,monthly,False,2022_plus,0.6328307640815053,0.33443522008264337,
+5,cfg_010,10,False,monthly,True,full,0.6328069547345551,0.33442143792616763,
+5,cfg_011,10,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_012,10,False,monthly,True,2022_plus,0.6328069547345551,0.33442143792616763,
+5,cfg_013,10,True,none,False,full,1.146466628780538,0.5462960179550628,
+5,cfg_014,10,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_015,10,True,none,False,2022_plus,1.146466628780538,0.5462960179550628,
+5,cfg_016,10,True,none,True,full,1.1312892138104553,0.5418827927139067,
+5,cfg_017,10,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_018,10,True,none,True,2022_plus,1.1312892138104553,0.5418827927139067,
+5,cfg_019,10,True,monthly,False,full,0.6329722364409447,0.3345171023727881,
+5,cfg_020,10,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_021,10,True,monthly,False,2022_plus,0.6329722364409447,0.3345171023727881,
+5,cfg_022,10,True,monthly,True,full,0.6329495537377341,0.3345039750453916,
+5,cfg_023,10,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_024,10,True,monthly,True,2022_plus,0.6329495537377341,0.3345039750453916,
+5,cfg_025,20,False,none,False,full,2.428133738259489,0.7516646542532647,
+5,cfg_026,20,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_027,20,False,none,False,2022_plus,2.428133738259489,0.7516646542532647,
+5,cfg_028,20,False,none,True,full,2.3787038269307743,0.7472189664387637,
+5,cfg_029,20,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_030,20,False,none,True,2022_plus,2.3787038269307743,0.7472189664387637,
+5,cfg_031,20,False,monthly,False,full,0.8164575014640333,0.42785578625377557,
+5,cfg_032,20,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_033,20,False,monthly,False,2022_plus,0.8164575014640333,0.42785578625377557,
+5,cfg_034,20,False,monthly,True,full,0.8164237364525105,0.42784076407443716,
+5,cfg_035,20,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_036,20,False,monthly,True,2022_plus,0.8164237364525105,0.42784076407443716,
+5,cfg_037,20,True,none,False,full,2.443697807094951,0.7530325326641764,
+5,cfg_038,20,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_039,20,True,none,False,2022_plus,2.443697807094951,0.7530325326641764,
+5,cfg_040,20,True,none,True,full,2.3938672420423472,0.7485994486311981,
+5,cfg_041,20,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_042,20,True,none,True,2022_plus,2.3938672420423472,0.7485994486311981,
+5,cfg_043,20,True,monthly,False,full,0.8156273659809182,0.42748624846227196,
+5,cfg_044,20,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_045,20,True,monthly,False,2022_plus,0.8156273659809182,0.42748624846227196,
+5,cfg_046,20,True,monthly,True,full,0.8155947984596653,0.42747174209362043,
+5,cfg_047,20,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_048,20,True,monthly,True,2022_plus,0.8155947984596653,0.42747174209362043,
+5,cfg_049,60,False,none,False,full,8.070367681353284,0.917697071078019,
+5,cfg_050,60,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_051,60,False,none,False,2022_plus,8.070367681353284,0.917697071078019,
+5,cfg_052,60,False,none,True,full,7.761499576063188,0.9145658269078805,
+5,cfg_053,60,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_054,60,False,none,True,2022_plus,7.761499576063188,0.9145658269078805,
+5,cfg_055,60,False,monthly,False,full,1.0802536150698958,0.5264219157618915,
+5,cfg_056,60,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_057,60,False,monthly,False,2022_plus,1.0802536150698958,0.5264219157618915,
+5,cfg_058,60,False,monthly,True,full,1.080213324802304,0.5264093172538131,
+5,cfg_059,60,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_060,60,False,monthly,True,2022_plus,1.080213324802304,0.5264093172538131,
+5,cfg_061,60,True,none,False,full,8.13683846541227,0.9183411794707846,
+5,cfg_062,60,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_063,60,True,none,False,2022_plus,8.13683846541227,0.9183411794707846,
+5,cfg_064,60,True,none,True,full,7.824698746697492,0.91522575282733,
+5,cfg_065,60,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_066,60,True,none,True,2022_plus,7.824698746697492,0.91522575282733,
+5,cfg_067,60,True,monthly,False,full,1.0766163016219226,0.5252819735814567,
+5,cfg_068,60,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_069,60,True,monthly,False,2022_plus,1.0766163016219226,0.5252819735814567,
+5,cfg_070,60,True,monthly,True,full,1.076577196793523,0.5252696896570167,
+5,cfg_071,60,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+5,cfg_072,60,True,monthly,True,2022_plus,1.076577196793523,0.5252696896570167,
+10,cfg_001,10,False,none,False,full,1.431895020614949,0.6162658618185871,
+10,cfg_002,10,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_003,10,False,none,False,2022_plus,1.431895020614949,0.6162658618185871,
+10,cfg_004,10,False,none,True,full,1.4150013563240456,0.6127144991577383,
+10,cfg_005,10,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_006,10,False,none,True,2022_plus,1.4150013563240456,0.6127144991577383,
+10,cfg_007,10,False,monthly,False,full,0.8774428456091754,0.45386169238043034,
+10,cfg_008,10,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_009,10,False,monthly,False,2022_plus,0.8774428456091754,0.45386169238043034,
+10,cfg_010,10,False,monthly,True,full,0.8773974808258296,0.4538431551972796,
+10,cfg_011,10,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_012,10,False,monthly,True,2022_plus,0.8773974808258296,0.4538431551972796,
+10,cfg_013,10,True,none,False,full,1.4439395894605174,0.6187593180141278,
+10,cfg_014,10,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_015,10,True,none,False,2022_plus,1.4439395894605174,0.6187593180141278,
+10,cfg_016,10,True,none,True,full,1.4267746737195437,0.615196193323106,
+10,cfg_017,10,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_018,10,True,none,True,2022_plus,1.4267746737195437,0.615196193323106,
+10,cfg_019,10,True,monthly,False,full,0.8756822598470991,0.453141421348308,
+10,cfg_020,10,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_021,10,True,monthly,False,2022_plus,0.8756822598470991,0.453141421348308,
+10,cfg_022,10,True,monthly,True,full,0.8756330866551035,0.45312127903918253,
+10,cfg_023,10,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_024,10,True,monthly,True,2022_plus,0.8756330866551035,0.45312127903918253,
+10,cfg_025,20,False,none,False,full,2.620849647548049,0.7676094333992206,
+10,cfg_026,20,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_027,20,False,none,False,2022_plus,2.620849647548049,0.7676094333992206,
+10,cfg_028,20,False,none,True,full,2.5668866338487577,0.7633533866401736,
+10,cfg_029,20,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_030,20,False,none,True,2022_plus,2.5668866338487577,0.7633533866401736,
+10,cfg_031,20,False,monthly,False,full,1.2902481329722655,0.5843705108766123,
+10,cfg_032,20,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_033,20,False,monthly,False,2022_plus,1.2902481329722655,0.5843705108766123,
+10,cfg_034,20,False,monthly,True,full,1.290234050138838,0.5843670842973369,
+10,cfg_035,20,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_036,20,False,monthly,True,2022_plus,1.290234050138838,0.5843670842973369,
+10,cfg_037,20,True,none,False,full,2.647078991445347,0.7696236833774911,
+10,cfg_038,20,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_039,20,True,none,False,2022_plus,2.647078991445347,0.7696236833774911,
+10,cfg_040,20,True,none,True,full,2.592243933742128,0.76537242822447,
+10,cfg_041,20,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_042,20,True,none,True,2022_plus,2.592243933742128,0.76537242822447,
+10,cfg_043,20,True,monthly,False,full,1.2886160771591497,0.5839730409848071,
+10,cfg_044,20,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_045,20,True,monthly,False,2022_plus,1.2886160771591497,0.5839730409848071,
+10,cfg_046,20,True,monthly,True,full,1.2885993444692925,0.5839689621036419,
+10,cfg_047,20,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_048,20,True,monthly,True,2022_plus,1.2885993444692925,0.5839689621036419,
+10,cfg_049,60,False,none,False,full,5.575550183825153,0.8830980310704587,
+10,cfg_050,60,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_051,60,False,none,False,2022_plus,5.575550183825153,0.8830980310704587,
+10,cfg_052,60,False,none,True,full,5.2680848742705,0.8767137000184485,
+10,cfg_053,60,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_054,60,False,none,True,2022_plus,5.2680848742705,0.8767137000184485,
+10,cfg_055,60,False,monthly,False,full,1.7071188003494606,0.6662879404164157,
+10,cfg_056,60,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_057,60,False,monthly,False,2022_plus,1.7071188003494606,0.6662879404164157,
+10,cfg_058,60,False,monthly,True,full,1.707119169436528,0.6662879989073659,
+10,cfg_059,60,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_060,60,False,monthly,True,2022_plus,1.707119169436528,0.6662879989073659,
+10,cfg_061,60,True,none,False,full,5.64710105532769,0.8844901556619527,
+10,cfg_062,60,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_063,60,True,none,False,2022_plus,5.64710105532769,0.8844901556619527,
+10,cfg_064,60,True,none,True,full,5.3336032657731485,0.8781318560832418,
+10,cfg_065,60,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_066,60,True,none,True,2022_plus,5.3336032657731485,0.8781318560832418,
+10,cfg_067,60,True,monthly,False,full,1.7197598587616967,0.6682794735885498,
+10,cfg_068,60,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_069,60,True,monthly,False,2022_plus,1.7197598587616967,0.6682794735885498,
+10,cfg_070,60,True,monthly,True,full,1.7197584937659807,0.6682792598024172,
+10,cfg_071,60,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+10,cfg_072,60,True,monthly,True,2022_plus,1.7197584937659807,0.6682792598024172,
+20,cfg_001,10,False,none,False,full,1.7120853230440756,0.6670731877672252,
+20,cfg_002,10,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_003,10,False,none,False,2022_plus,1.7120853230440756,0.6670731877672252,
+20,cfg_004,10,False,none,True,full,1.6869640490653477,0.6630635893324319,
+20,cfg_005,10,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_006,10,False,none,True,2022_plus,1.6869640490653477,0.6630635893324319,
+20,cfg_007,10,False,monthly,False,full,1.0443103693652456,0.5149235893185526,
+20,cfg_008,10,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_009,10,False,monthly,False,2022_plus,1.0443103693652456,0.5149235893185526,
+20,cfg_010,10,False,monthly,True,full,1.0442864403544427,0.5149157578995078,
+20,cfg_011,10,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_012,10,False,monthly,True,2022_plus,1.0442864403544427,0.5149157578995078,
+20,cfg_013,10,True,none,False,full,1.723234399352781,0.6688227805739293,
+20,cfg_014,10,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_015,10,True,none,False,2022_plus,1.723234399352781,0.6688227805739293,
+20,cfg_016,10,True,none,True,full,1.6979394014732836,0.6648269776363613,
+20,cfg_017,10,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_018,10,True,none,True,2022_plus,1.6979394014732836,0.6648269776363613,
+20,cfg_019,10,True,monthly,False,full,1.0499904968868918,0.5167758039097112,
+20,cfg_020,10,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_021,10,True,monthly,False,2022_plus,1.0499904968868918,0.5167758039097112,
+20,cfg_022,10,True,monthly,True,full,1.0499693689723453,0.516768939244185,
+20,cfg_023,10,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_024,10,True,monthly,True,2022_plus,1.0499693689723453,0.516768939244185,
+20,cfg_025,20,False,none,False,full,2.9176732217867754,0.7885428929248389,
+20,cfg_026,20,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_027,20,False,none,False,2022_plus,2.9176732217867754,0.7885428929248389,
+20,cfg_028,20,False,none,True,full,2.827099784286445,0.7825639809250169,
+20,cfg_029,20,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_030,20,False,none,True,2022_plus,2.827099784286445,0.7825639809250169,
+20,cfg_031,20,False,monthly,False,full,1.3963855380466377,0.6087262135985906,
+20,cfg_032,20,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_033,20,False,monthly,False,2022_plus,1.3963855380466377,0.6087262135985906,
+20,cfg_034,20,False,monthly,True,full,1.396379936275816,0.6087250014288806,
+20,cfg_035,20,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_036,20,False,monthly,True,2022_plus,1.396379936275816,0.6087250014288806,
+20,cfg_037,20,True,none,False,full,2.9390640217988118,0.7899075000238428,
+20,cfg_038,20,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_039,20,True,none,False,2022_plus,2.9390640217988118,0.7899075000238428,
+20,cfg_040,20,True,none,True,full,2.847834173552364,0.7839621780814434,
+20,cfg_041,20,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_042,20,True,none,True,2022_plus,2.847834173552364,0.7839621780814434,
+20,cfg_043,20,True,monthly,False,full,1.4045474939735285,0.6104846491739953,
+20,cfg_044,20,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_045,20,True,monthly,False,2022_plus,1.4045474939735285,0.6104846491739953,
+20,cfg_046,20,True,monthly,True,full,1.4045458957447257,0.6104843063535805,
+20,cfg_047,20,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_048,20,True,monthly,True,2022_plus,1.4045458957447257,0.6104843063535805,
+20,cfg_049,60,False,none,False,full,6.305829088946789,0.8959043206146698,
+20,cfg_050,60,False,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_051,60,False,none,False,2022_plus,6.305829088946789,0.8959043206146698,
+20,cfg_052,60,False,none,True,full,5.695592695620684,0.8854149556177625,
+20,cfg_053,60,False,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_054,60,False,none,True,2022_plus,5.695592695620684,0.8854149556177625,
+20,cfg_055,60,False,monthly,False,full,1.8718319740943097,0.6905242637654622,
+20,cfg_056,60,False,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_057,60,False,monthly,False,2022_plus,1.8718319740943097,0.6905242637654622,
+20,cfg_058,60,False,monthly,True,full,1.8718953946983032,0.6905329271793971,
+20,cfg_059,60,False,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_060,60,False,monthly,True,2022_plus,1.8718953946983032,0.6905329271793971,
+20,cfg_061,60,True,none,False,full,6.3604224236804985,0.8967499955363089,
+20,cfg_062,60,True,none,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_063,60,True,none,False,2022_plus,6.3604224236804985,0.8967499955363089,
+20,cfg_064,60,True,none,True,full,5.743542542873479,0.8863149947996461,
+20,cfg_065,60,True,none,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_066,60,True,none,True,2022_plus,5.743542542873479,0.8863149947996461,
+20,cfg_067,60,True,monthly,False,full,1.8834647467544838,0.6921053662428157,
+20,cfg_068,60,True,monthly,False,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_069,60,True,monthly,False,2022_plus,1.8834647467544838,0.6921053662428157,
+20,cfg_070,60,True,monthly,True,full,1.8835334088830746,0.6921146513523195,
+20,cfg_071,60,True,monthly,True,pre_2022,,,"no_pre_2022_data,Insufficient sample"
+20,cfg_072,60,True,monthly,True,2022_plus,1.8835334088830746,0.6921146513523195,
