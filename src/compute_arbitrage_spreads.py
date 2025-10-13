@@ -12,16 +12,16 @@ import pandas as pd
 # Import your previously defined functions
 from load_fed_yield_curve import load_fed_yield_curve  # Loads nominal Treasury yields (feds200628.csv)
 from load_tips_yield_curve import load_tips_yield_curve  # Loads TIPS yields (feds200805.csv)
-from planC.infl_curve_public import load_clevelandfed_zero_coupon_inflation
+from manual_inflation_swaps import load_manual_inflation_swaps
 
 # DATA_DIR: the directory where your data files are stored
 from settings import DATA_DIR
 
 
 def load_inflation_swaps(data_dir=DATA_DIR):
-    """Load zero-coupon inflation expectations from the Cleveland Fed."""
+    """Load inflation swaps from the manually curated Bloomberg export."""
 
-    swaps = load_clevelandfed_zero_coupon_inflation(data_dir, [2, 5, 10, 20])
+    swaps = load_manual_inflation_swaps()
     return swaps
 
 def process_nominal_yields(nom_df):

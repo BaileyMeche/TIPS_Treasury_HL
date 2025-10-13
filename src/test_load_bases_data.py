@@ -26,7 +26,10 @@ Includes:
 import numpy as np
 import pandas as pd
 from pathlib import Path
+from urllib.error import URLError
+
 import compute_tips_treasury
+from manual_inflation_swaps import load_manual_inflation_swaps
 import unittest
 from settings import config
 
@@ -527,7 +530,26 @@ def load_combined_spreads_wide(data_dir=DATA_DIR, raw=False, rename=True):
     #     data_dir / "arbitrage_spread_wide.dta"
     # )
     filepath = "https://www.dropbox.com/scl/fi/81jm3dbe856i7p17rjy87/arbitrage_spread_wide.dta?rlkey=ke78u464vucmn43zt27nzkxya&st=59g2n7dt&dl=1"
-    df = pd.read_stata(filepath).set_index("date")
+    try:
+        df = pd.read_stata(filepath).set_index("date")
+    except (URLError, OSError):
+        manual = load_manual_inflation_swaps().set_index("date")
+        manual_rename = {
+            "inf_swap_1y": "Treasury_Swap_01Y",
+            "inf_swap_2y": "Treasury_Swap_02Y",
+            "inf_swap_3y": "Treasury_Swap_03Y",
+            "inf_swap_4y": "Treasury_Swap_04Y",
+            "inf_swap_5y": "Treasury_Swap_05Y",
+            "inf_swap_10y": "Treasury_Swap_10Y",
+            "inf_swap_20y": "Treasury_Swap_20Y",
+            "inf_swap_30y": "Treasury_Swap_30Y",
+        }
+        if raw:
+            return manual
+        if rename:
+            manual = manual.rename(columns={k: v for k, v in manual_rename.items() if k in manual.columns})
+        return manual.reindex(sorted(manual.columns), axis=1)
+
     if raw:
         ret = df.copy()
     else:

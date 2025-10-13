@@ -356,6 +356,11 @@ class ClevelandFedInflationCurve:
         target = np.array(sorted({float(m) for m in maturities}), dtype=float)
         records: List[dict[str, float | pd.Timestamp]] = []
         for date, row in self.zero_coupon_rates.sort_index().iterrows():
+            if not allow_partial:
+                col_positions = row.index.to_numpy(dtype=float)
+                coverage_mask = (col_positions >= target.min()) & (col_positions <= target.max())
+                if np.isnan(row.to_numpy(dtype=float)[coverage_mask]).any():
+                    continue
             available = row.dropna()
             if len(available) < 2:
                 continue
