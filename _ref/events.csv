@@ -1,99 +1,1022 @@
 date,event_type,details
-2022-10-13,cpi_release,Monthly CPI release (BLS)
-2022-10-13,tips_auction,Approximate TIPS auction (5y/20y)
-2022-11-02,treasury_refunding,Quarterly refunding statement
-2022-11-02,fomc_statement,FOMC rate decision
-2022-11-10,tips_auction,Approximate TIPS auction (10y)
-2022-11-10,cpi_release,Monthly CPI release (BLS)
-2022-11-23,fomc_minutes,FOMC minutes release
-2022-12-13,cpi_release,Monthly CPI release (BLS)
-2022-12-14,fomc_statement,FOMC rate decision
+2010-01-14,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2010-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-01-20,fomc_statement,Approx. FOMC rate decision
+2010-01-21,tips_auction,Approximate TIPS auction (5y/10y)
+2010-01-26,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2010-02-03,treasury_refunding,Treasury refunding statement
+2010-02-10,fomc_minutes,Approx. FOMC minutes
+2010-02-11,tips_auction_announce,Approximate TIPS auction (20y)
+2010-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-02-18,tips_auction,Approximate TIPS auction (20y)
+2010-02-23,tips_auction_settlement,Approximate TIPS auction (20y)
+2010-03-11,tips_auction_announce,Approximate TIPS auction (10y)
+2010-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-03-17,fomc_statement,Approx. FOMC rate decision
+2010-03-18,tips_auction,Approximate TIPS auction (10y)
+2010-03-23,tips_auction_settlement,Approximate TIPS auction (10y)
+2010-04-07,fomc_minutes,Approx. FOMC minutes
+2010-04-08,tips_auction_announce,Approximate TIPS auction (5y)
+2010-04-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-04-15,tips_auction,Approximate TIPS auction (5y)
+2010-04-20,tips_auction_settlement,Approximate TIPS auction (5y)
+2010-04-21,fomc_statement,Approx. FOMC rate decision
+2010-05-05,treasury_refunding,Treasury refunding statement
+2010-05-12,fomc_minutes,Approx. FOMC minutes
+2010-05-13,tips_auction_announce,Approximate TIPS auction (10y)
+2010-05-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-05-20,tips_auction,Approximate TIPS auction (10y)
+2010-05-25,tips_auction_settlement,Approximate TIPS auction (10y)
+2010-06-10,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2010-06-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-06-16,fomc_statement,Approx. FOMC rate decision
+2010-06-17,tips_auction,Approximate TIPS auction (5y/20y)
+2010-06-22,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2010-07-07,fomc_minutes,Approx. FOMC minutes
+2010-07-08,tips_auction_announce,Approximate TIPS auction (10y)
+2010-07-15,tips_auction,Approximate TIPS auction (10y)
+2010-07-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-07-20,tips_auction_settlement,Approximate TIPS auction (10y)
+2010-07-21,fomc_statement,Approx. FOMC rate decision
+2010-08-04,treasury_refunding,Treasury refunding statement
+2010-08-11,fomc_minutes,Approx. FOMC minutes
+2010-08-12,tips_auction_announce,Approximate TIPS auction (5y)
+2010-08-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-08-19,tips_auction,Approximate TIPS auction (5y)
+2010-08-24,tips_auction_settlement,Approximate TIPS auction (5y)
+2010-09-09,tips_auction_announce,Approximate TIPS auction (10y)
+2010-09-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-09-15,fomc_statement,Approx. FOMC rate decision
+2010-09-16,tips_auction,Approximate TIPS auction (10y)
+2010-09-21,tips_auction_settlement,Approximate TIPS auction (10y)
+2010-10-06,fomc_minutes,Approx. FOMC minutes
+2010-10-14,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2010-10-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-10-21,tips_auction,Approximate TIPS auction (5y/20y)
+2010-10-26,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2010-11-03,treasury_refunding,Treasury refunding statement
+2010-11-11,tips_auction_announce,Approximate TIPS auction (10y)
+2010-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-11-17,fomc_statement,Approx. FOMC rate decision
+2010-11-18,tips_auction,Approximate TIPS auction (10y)
+2010-11-23,tips_auction_settlement,Approximate TIPS auction (10y)
+2010-12-08,fomc_minutes,Approx. FOMC minutes
+2010-12-09,tips_auction_announce,Approximate TIPS auction (5y)
+2010-12-15,fomc_statement,Approx. FOMC rate decision
+2010-12-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2010-12-16,tips_auction,Approximate TIPS auction (5y)
+2010-12-21,tips_auction_settlement,Approximate TIPS auction (5y)
+2011-01-05,fomc_minutes,Approx. FOMC minutes
+2011-01-13,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2011-01-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-01-19,fomc_statement,Approx. FOMC rate decision
+2011-01-20,tips_auction,Approximate TIPS auction (5y/10y)
+2011-01-25,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2011-02-02,treasury_refunding,Treasury refunding statement
+2011-02-09,fomc_minutes,Approx. FOMC minutes
+2011-02-10,tips_auction_announce,Approximate TIPS auction (20y)
+2011-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-02-17,tips_auction,Approximate TIPS auction (20y)
+2011-02-22,tips_auction_settlement,Approximate TIPS auction (20y)
+2011-03-10,tips_auction_announce,Approximate TIPS auction (10y)
+2011-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-03-16,fomc_statement,Approx. FOMC rate decision
+2011-03-17,tips_auction,Approximate TIPS auction (10y)
+2011-03-22,tips_auction_settlement,Approximate TIPS auction (10y)
+2011-04-06,fomc_minutes,Approx. FOMC minutes
+2011-04-14,tips_auction_announce,Approximate TIPS auction (5y)
+2011-04-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-04-20,fomc_statement,Approx. FOMC rate decision
+2011-04-21,tips_auction,Approximate TIPS auction (5y)
+2011-04-26,tips_auction_settlement,Approximate TIPS auction (5y)
+2011-05-04,treasury_refunding,Treasury refunding statement
+2011-05-11,fomc_minutes,Approx. FOMC minutes
+2011-05-12,tips_auction_announce,Approximate TIPS auction (10y)
+2011-05-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-05-19,tips_auction,Approximate TIPS auction (10y)
+2011-05-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2011-06-09,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2011-06-15,fomc_statement,Approx. FOMC rate decision
+2011-06-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-06-16,tips_auction,Approximate TIPS auction (5y/20y)
+2011-06-21,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2011-07-06,fomc_minutes,Approx. FOMC minutes
+2011-07-14,tips_auction_announce,Approximate TIPS auction (10y)
+2011-07-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-07-20,fomc_statement,Approx. FOMC rate decision
+2011-07-21,tips_auction,Approximate TIPS auction (10y)
+2011-07-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2011-08-03,treasury_refunding,Treasury refunding statement
+2011-08-10,fomc_minutes,Approx. FOMC minutes
+2011-08-11,tips_auction_announce,Approximate TIPS auction (5y)
+2011-08-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-08-18,tips_auction,Approximate TIPS auction (5y)
+2011-08-23,tips_auction_settlement,Approximate TIPS auction (5y)
+2011-09-08,tips_auction_announce,Approximate TIPS auction (10y)
+2011-09-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-09-15,tips_auction,Approximate TIPS auction (10y)
+2011-09-20,tips_auction_settlement,Approximate TIPS auction (10y)
+2011-09-21,fomc_statement,Approx. FOMC rate decision
+2011-10-12,fomc_minutes,Approx. FOMC minutes
+2011-10-13,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2011-10-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-10-20,tips_auction,Approximate TIPS auction (5y/20y)
+2011-10-25,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2011-11-02,treasury_refunding,Treasury refunding statement
+2011-11-10,tips_auction_announce,Approximate TIPS auction (10y)
+2011-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-11-16,fomc_statement,Approx. FOMC rate decision
+2011-11-17,tips_auction,Approximate TIPS auction (10y)
+2011-11-22,tips_auction_settlement,Approximate TIPS auction (10y)
+2011-12-07,fomc_minutes,Approx. FOMC minutes
+2011-12-08,tips_auction_announce,Approximate TIPS auction (5y)
+2011-12-15,tips_auction,Approximate TIPS auction (5y)
+2011-12-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2011-12-20,tips_auction_settlement,Approximate TIPS auction (5y)
+2011-12-21,fomc_statement,Approx. FOMC rate decision
+2012-01-11,fomc_minutes,Approx. FOMC minutes
+2012-01-12,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2012-01-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-01-18,fomc_statement,Approx. FOMC rate decision
+2012-01-19,tips_auction,Approximate TIPS auction (5y/10y)
+2012-01-24,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2012-02-01,treasury_refunding,Treasury refunding statement
+2012-02-08,fomc_minutes,Approx. FOMC minutes
+2012-02-09,tips_auction_announce,Approximate TIPS auction (20y)
+2012-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-02-16,tips_auction,Approximate TIPS auction (20y)
+2012-02-21,tips_auction_settlement,Approximate TIPS auction (20y)
+2012-03-08,tips_auction_announce,Approximate TIPS auction (10y)
+2012-03-15,tips_auction,Approximate TIPS auction (10y)
+2012-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-03-20,tips_auction_settlement,Approximate TIPS auction (10y)
+2012-03-21,fomc_statement,Approx. FOMC rate decision
+2012-04-11,fomc_minutes,Approx. FOMC minutes
+2012-04-12,tips_auction_announce,Approximate TIPS auction (5y)
+2012-04-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-04-18,fomc_statement,Approx. FOMC rate decision
+2012-04-19,tips_auction,Approximate TIPS auction (5y)
+2012-04-24,tips_auction_settlement,Approximate TIPS auction (5y)
+2012-05-02,treasury_refunding,Treasury refunding statement
+2012-05-09,fomc_minutes,Approx. FOMC minutes
+2012-05-10,tips_auction_announce,Approximate TIPS auction (10y)
+2012-05-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-05-17,tips_auction,Approximate TIPS auction (10y)
+2012-05-22,tips_auction_settlement,Approximate TIPS auction (10y)
+2012-06-14,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2012-06-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-06-20,fomc_statement,Approx. FOMC rate decision
+2012-06-21,tips_auction,Approximate TIPS auction (5y/20y)
+2012-06-26,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2012-07-11,fomc_minutes,Approx. FOMC minutes
+2012-07-12,tips_auction_announce,Approximate TIPS auction (10y)
+2012-07-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-07-18,fomc_statement,Approx. FOMC rate decision
+2012-07-19,tips_auction,Approximate TIPS auction (10y)
+2012-07-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2012-08-01,treasury_refunding,Treasury refunding statement
+2012-08-08,fomc_minutes,Approx. FOMC minutes
+2012-08-09,tips_auction_announce,Approximate TIPS auction (5y)
+2012-08-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-08-16,tips_auction,Approximate TIPS auction (5y)
+2012-08-21,tips_auction_settlement,Approximate TIPS auction (5y)
+2012-09-13,tips_auction_announce,Approximate TIPS auction (10y)
+2012-09-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-09-19,fomc_statement,Approx. FOMC rate decision
+2012-09-20,tips_auction,Approximate TIPS auction (10y)
+2012-09-25,tips_auction_settlement,Approximate TIPS auction (10y)
+2012-10-10,fomc_minutes,Approx. FOMC minutes
+2012-10-11,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2012-10-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-10-18,tips_auction,Approximate TIPS auction (5y/20y)
+2012-10-23,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2012-11-07,treasury_refunding,Treasury refunding statement
+2012-11-08,tips_auction_announce,Approximate TIPS auction (10y)
+2012-11-15,tips_auction,Approximate TIPS auction (10y)
+2012-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-11-20,tips_auction_settlement,Approximate TIPS auction (10y)
+2012-11-21,fomc_statement,Approx. FOMC rate decision
+2012-12-12,fomc_minutes,Approx. FOMC minutes
+2012-12-13,tips_auction_announce,Approximate TIPS auction (5y)
+2012-12-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2012-12-19,fomc_statement,Approx. FOMC rate decision
+2012-12-20,tips_auction,Approximate TIPS auction (5y)
+2012-12-25,tips_auction_settlement,Approximate TIPS auction (5y)
+2013-01-09,fomc_minutes,Approx. FOMC minutes
+2013-01-10,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2013-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-01-16,fomc_statement,Approx. FOMC rate decision
+2013-01-17,tips_auction,Approximate TIPS auction (5y/10y)
+2013-01-22,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2013-02-06,treasury_refunding,Treasury refunding statement
+2013-02-06,fomc_minutes,Approx. FOMC minutes
+2013-02-14,tips_auction_announce,Approximate TIPS auction (20y)
+2013-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-02-21,tips_auction,Approximate TIPS auction (20y)
+2013-02-26,tips_auction_settlement,Approximate TIPS auction (20y)
+2013-03-14,tips_auction_announce,Approximate TIPS auction (10y)
+2013-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-03-20,fomc_statement,Approx. FOMC rate decision
+2013-03-21,tips_auction,Approximate TIPS auction (10y)
+2013-03-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2013-04-10,fomc_minutes,Approx. FOMC minutes
+2013-04-11,tips_auction_announce,Approximate TIPS auction (5y)
+2013-04-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-04-17,fomc_statement,Approx. FOMC rate decision
+2013-04-18,tips_auction,Approximate TIPS auction (5y)
+2013-04-23,tips_auction_settlement,Approximate TIPS auction (5y)
+2013-05-01,treasury_refunding,Treasury refunding statement
+2013-05-08,fomc_minutes,Approx. FOMC minutes
+2013-05-09,tips_auction_announce,Approximate TIPS auction (10y)
+2013-05-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-05-16,tips_auction,Approximate TIPS auction (10y)
+2013-05-21,tips_auction_settlement,Approximate TIPS auction (10y)
+2013-06-13,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2013-06-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-06-19,fomc_statement,Approx. FOMC rate decision
+2013-06-20,tips_auction,Approximate TIPS auction (5y/20y)
+2013-06-25,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2013-07-10,fomc_minutes,Approx. FOMC minutes
+2013-07-11,tips_auction_announce,Approximate TIPS auction (10y)
+2013-07-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-07-17,fomc_statement,Approx. FOMC rate decision
+2013-07-18,tips_auction,Approximate TIPS auction (10y)
+2013-07-23,tips_auction_settlement,Approximate TIPS auction (10y)
+2013-08-07,fomc_minutes,Approx. FOMC minutes
+2013-08-07,treasury_refunding,Treasury refunding statement
+2013-08-08,tips_auction_announce,Approximate TIPS auction (5y)
+2013-08-15,tips_auction,Approximate TIPS auction (5y)
+2013-08-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-08-20,tips_auction_settlement,Approximate TIPS auction (5y)
+2013-09-12,tips_auction_announce,Approximate TIPS auction (10y)
+2013-09-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-09-18,fomc_statement,Approx. FOMC rate decision
+2013-09-19,tips_auction,Approximate TIPS auction (10y)
+2013-09-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2013-10-09,fomc_minutes,Approx. FOMC minutes
+2013-10-10,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2013-10-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-10-17,tips_auction,Approximate TIPS auction (5y/20y)
+2013-10-22,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2013-11-06,treasury_refunding,Treasury refunding statement
+2013-11-14,tips_auction_announce,Approximate TIPS auction (10y)
+2013-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-11-20,fomc_statement,Approx. FOMC rate decision
+2013-11-21,tips_auction,Approximate TIPS auction (10y)
+2013-11-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2013-12-11,fomc_minutes,Approx. FOMC minutes
+2013-12-12,tips_auction_announce,Approximate TIPS auction (5y)
+2013-12-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2013-12-18,fomc_statement,Approx. FOMC rate decision
+2013-12-19,tips_auction,Approximate TIPS auction (5y)
+2013-12-24,tips_auction_settlement,Approximate TIPS auction (5y)
+2014-01-08,fomc_minutes,Approx. FOMC minutes
+2014-01-09,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2014-01-15,fomc_statement,Approx. FOMC rate decision
+2014-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-01-16,tips_auction,Approximate TIPS auction (5y/10y)
+2014-01-21,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2014-02-05,fomc_minutes,Approx. FOMC minutes
+2014-02-05,treasury_refunding,Treasury refunding statement
+2014-02-13,tips_auction_announce,Approximate TIPS auction (20y)
+2014-02-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-02-20,tips_auction,Approximate TIPS auction (20y)
+2014-02-25,tips_auction_settlement,Approximate TIPS auction (20y)
+2014-03-13,tips_auction_announce,Approximate TIPS auction (10y)
+2014-03-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-03-19,fomc_statement,Approx. FOMC rate decision
+2014-03-20,tips_auction,Approximate TIPS auction (10y)
+2014-03-25,tips_auction_settlement,Approximate TIPS auction (10y)
+2014-04-09,fomc_minutes,Approx. FOMC minutes
+2014-04-10,tips_auction_announce,Approximate TIPS auction (5y)
+2014-04-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-04-16,fomc_statement,Approx. FOMC rate decision
+2014-04-17,tips_auction,Approximate TIPS auction (5y)
+2014-04-22,tips_auction_settlement,Approximate TIPS auction (5y)
+2014-05-07,treasury_refunding,Treasury refunding statement
+2014-05-07,fomc_minutes,Approx. FOMC minutes
+2014-05-08,tips_auction_announce,Approximate TIPS auction (10y)
+2014-05-15,tips_auction,Approximate TIPS auction (10y)
+2014-05-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-05-20,tips_auction_settlement,Approximate TIPS auction (10y)
+2014-06-12,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2014-06-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-06-18,fomc_statement,Approx. FOMC rate decision
+2014-06-19,tips_auction,Approximate TIPS auction (5y/20y)
+2014-06-24,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2014-07-09,fomc_minutes,Approx. FOMC minutes
+2014-07-10,tips_auction_announce,Approximate TIPS auction (10y)
+2014-07-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-07-16,fomc_statement,Approx. FOMC rate decision
+2014-07-17,tips_auction,Approximate TIPS auction (10y)
+2014-07-22,tips_auction_settlement,Approximate TIPS auction (10y)
+2014-08-06,treasury_refunding,Treasury refunding statement
+2014-08-06,fomc_minutes,Approx. FOMC minutes
+2014-08-14,tips_auction_announce,Approximate TIPS auction (5y)
+2014-08-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-08-21,tips_auction,Approximate TIPS auction (5y)
+2014-08-26,tips_auction_settlement,Approximate TIPS auction (5y)
+2014-09-11,tips_auction_announce,Approximate TIPS auction (10y)
+2014-09-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-09-17,fomc_statement,Approx. FOMC rate decision
+2014-09-18,tips_auction,Approximate TIPS auction (10y)
+2014-09-23,tips_auction_settlement,Approximate TIPS auction (10y)
+2014-10-08,fomc_minutes,Approx. FOMC minutes
+2014-10-09,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2014-10-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-10-16,tips_auction,Approximate TIPS auction (5y/20y)
+2014-10-21,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2014-11-05,treasury_refunding,Treasury refunding statement
+2014-11-13,tips_auction_announce,Approximate TIPS auction (10y)
+2014-11-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-11-19,fomc_statement,Approx. FOMC rate decision
+2014-11-20,tips_auction,Approximate TIPS auction (10y)
+2014-11-25,tips_auction_settlement,Approximate TIPS auction (10y)
+2014-12-10,fomc_minutes,Approx. FOMC minutes
+2014-12-11,tips_auction_announce,Approximate TIPS auction (5y)
+2014-12-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2014-12-17,fomc_statement,Approx. FOMC rate decision
+2014-12-18,tips_auction,Approximate TIPS auction (5y)
+2014-12-23,tips_auction_settlement,Approximate TIPS auction (5y)
+2015-01-07,fomc_minutes,Approx. FOMC minutes
+2015-01-08,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2015-01-15,tips_auction,Approximate TIPS auction (5y/10y)
+2015-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-01-20,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2015-01-21,fomc_statement,Approx. FOMC rate decision
+2015-02-04,treasury_refunding,Treasury refunding statement
+2015-02-11,fomc_minutes,Approx. FOMC minutes
+2015-02-12,tips_auction_announce,Approximate TIPS auction (20y)
+2015-02-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-02-19,tips_auction,Approximate TIPS auction (20y)
+2015-02-24,tips_auction_settlement,Approximate TIPS auction (20y)
+2015-03-12,tips_auction_announce,Approximate TIPS auction (10y)
+2015-03-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-03-18,fomc_statement,Approx. FOMC rate decision
+2015-03-19,tips_auction,Approximate TIPS auction (10y)
+2015-03-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2015-04-08,fomc_minutes,Approx. FOMC minutes
+2015-04-09,tips_auction_announce,Approximate TIPS auction (5y)
+2015-04-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-04-15,fomc_statement,Approx. FOMC rate decision
+2015-04-16,tips_auction,Approximate TIPS auction (5y)
+2015-04-21,tips_auction_settlement,Approximate TIPS auction (5y)
+2015-05-06,fomc_minutes,Approx. FOMC minutes
+2015-05-06,treasury_refunding,Treasury refunding statement
+2015-05-14,tips_auction_announce,Approximate TIPS auction (10y)
+2015-05-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-05-21,tips_auction,Approximate TIPS auction (10y)
+2015-05-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2015-06-11,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2015-06-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-06-17,fomc_statement,Approx. FOMC rate decision
+2015-06-18,tips_auction,Approximate TIPS auction (5y/20y)
+2015-06-23,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2015-07-08,fomc_minutes,Approx. FOMC minutes
+2015-07-09,tips_auction_announce,Approximate TIPS auction (10y)
+2015-07-15,fomc_statement,Approx. FOMC rate decision
+2015-07-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-07-16,tips_auction,Approximate TIPS auction (10y)
+2015-07-21,tips_auction_settlement,Approximate TIPS auction (10y)
+2015-08-05,fomc_minutes,Approx. FOMC minutes
+2015-08-05,treasury_refunding,Treasury refunding statement
+2015-08-13,tips_auction_announce,Approximate TIPS auction (5y)
+2015-08-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-08-20,tips_auction,Approximate TIPS auction (5y)
+2015-08-25,tips_auction_settlement,Approximate TIPS auction (5y)
+2015-09-10,tips_auction_announce,Approximate TIPS auction (10y)
+2015-09-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-09-16,fomc_statement,Approx. FOMC rate decision
+2015-09-17,tips_auction,Approximate TIPS auction (10y)
+2015-09-22,tips_auction_settlement,Approximate TIPS auction (10y)
+2015-10-07,fomc_minutes,Approx. FOMC minutes
+2015-10-08,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2015-10-15,tips_auction,Approximate TIPS auction (5y/20y)
+2015-10-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-10-20,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2015-11-04,treasury_refunding,Treasury refunding statement
+2015-11-12,tips_auction_announce,Approximate TIPS auction (10y)
+2015-11-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-11-18,fomc_statement,Approx. FOMC rate decision
+2015-11-19,tips_auction,Approximate TIPS auction (10y)
+2015-11-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2015-12-09,fomc_minutes,Approx. FOMC minutes
+2015-12-10,tips_auction_announce,Approximate TIPS auction (5y)
+2015-12-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2015-12-16,fomc_statement,Approx. FOMC rate decision
+2015-12-17,tips_auction,Approximate TIPS auction (5y)
+2015-12-22,tips_auction_settlement,Approximate TIPS auction (5y)
+2016-01-06,fomc_minutes,Approx. FOMC minutes
+2016-01-14,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2016-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-01-20,fomc_statement,Approx. FOMC rate decision
+2016-01-21,tips_auction,Approximate TIPS auction (5y/10y)
+2016-01-26,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2016-02-03,treasury_refunding,Treasury refunding statement
+2016-02-10,fomc_minutes,Approx. FOMC minutes
+2016-02-11,tips_auction_announce,Approximate TIPS auction (20y)
+2016-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-02-18,tips_auction,Approximate TIPS auction (20y)
+2016-02-23,tips_auction_settlement,Approximate TIPS auction (20y)
+2016-03-10,tips_auction_announce,Approximate TIPS auction (10y)
+2016-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-03-16,fomc_statement,Approx. FOMC rate decision
+2016-03-17,tips_auction,Approximate TIPS auction (10y)
+2016-03-22,tips_auction_settlement,Approximate TIPS auction (10y)
+2016-04-06,fomc_minutes,Approx. FOMC minutes
+2016-04-14,tips_auction_announce,Approximate TIPS auction (5y)
+2016-04-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-04-20,fomc_statement,Approx. FOMC rate decision
+2016-04-21,tips_auction,Approximate TIPS auction (5y)
+2016-04-26,tips_auction_settlement,Approximate TIPS auction (5y)
+2016-05-04,treasury_refunding,Treasury refunding statement
+2016-05-11,fomc_minutes,Approx. FOMC minutes
+2016-05-12,tips_auction_announce,Approximate TIPS auction (10y)
+2016-05-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-05-19,tips_auction,Approximate TIPS auction (10y)
+2016-05-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2016-06-09,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2016-06-15,fomc_statement,Approx. FOMC rate decision
+2016-06-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-06-16,tips_auction,Approximate TIPS auction (5y/20y)
+2016-06-21,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2016-07-06,fomc_minutes,Approx. FOMC minutes
+2016-07-14,tips_auction_announce,Approximate TIPS auction (10y)
+2016-07-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-07-20,fomc_statement,Approx. FOMC rate decision
+2016-07-21,tips_auction,Approximate TIPS auction (10y)
+2016-07-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2016-08-03,treasury_refunding,Treasury refunding statement
+2016-08-10,fomc_minutes,Approx. FOMC minutes
+2016-08-11,tips_auction_announce,Approximate TIPS auction (5y)
+2016-08-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-08-18,tips_auction,Approximate TIPS auction (5y)
+2016-08-23,tips_auction_settlement,Approximate TIPS auction (5y)
+2016-09-08,tips_auction_announce,Approximate TIPS auction (10y)
+2016-09-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-09-15,tips_auction,Approximate TIPS auction (10y)
+2016-09-20,tips_auction_settlement,Approximate TIPS auction (10y)
+2016-09-21,fomc_statement,Approx. FOMC rate decision
+2016-10-12,fomc_minutes,Approx. FOMC minutes
+2016-10-13,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2016-10-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-10-20,tips_auction,Approximate TIPS auction (5y/20y)
+2016-10-25,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2016-11-02,treasury_refunding,Treasury refunding statement
+2016-11-10,tips_auction_announce,Approximate TIPS auction (10y)
+2016-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-11-16,fomc_statement,Approx. FOMC rate decision
+2016-11-17,tips_auction,Approximate TIPS auction (10y)
+2016-11-22,tips_auction_settlement,Approximate TIPS auction (10y)
+2016-12-07,fomc_minutes,Approx. FOMC minutes
+2016-12-08,tips_auction_announce,Approximate TIPS auction (5y)
+2016-12-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2016-12-15,tips_auction,Approximate TIPS auction (5y)
+2016-12-20,tips_auction_settlement,Approximate TIPS auction (5y)
+2016-12-21,fomc_statement,Approx. FOMC rate decision
+2017-01-11,fomc_minutes,Approx. FOMC minutes
+2017-01-12,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2017-01-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-01-18,fomc_statement,Approx. FOMC rate decision
+2017-01-19,tips_auction,Approximate TIPS auction (5y/10y)
+2017-01-24,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2017-02-01,treasury_refunding,Treasury refunding statement
+2017-02-08,fomc_minutes,Approx. FOMC minutes
+2017-02-09,tips_auction_announce,Approximate TIPS auction (20y)
+2017-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-02-16,tips_auction,Approximate TIPS auction (20y)
+2017-02-21,tips_auction_settlement,Approximate TIPS auction (20y)
+2017-03-09,tips_auction_announce,Approximate TIPS auction (10y)
+2017-03-15,fomc_statement,Approx. FOMC rate decision
+2017-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-03-16,tips_auction,Approximate TIPS auction (10y)
+2017-03-21,tips_auction_settlement,Approximate TIPS auction (10y)
+2017-04-05,fomc_minutes,Approx. FOMC minutes
+2017-04-13,tips_auction_announce,Approximate TIPS auction (5y)
+2017-04-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-04-19,fomc_statement,Approx. FOMC rate decision
+2017-04-20,tips_auction,Approximate TIPS auction (5y)
+2017-04-25,tips_auction_settlement,Approximate TIPS auction (5y)
+2017-05-03,treasury_refunding,Treasury refunding statement
+2017-05-10,fomc_minutes,Approx. FOMC minutes
+2017-05-11,tips_auction_announce,Approximate TIPS auction (10y)
+2017-05-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-05-18,tips_auction,Approximate TIPS auction (10y)
+2017-05-23,tips_auction_settlement,Approximate TIPS auction (10y)
+2017-06-08,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2017-06-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-06-15,tips_auction,Approximate TIPS auction (5y/20y)
+2017-06-20,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2017-06-21,fomc_statement,Approx. FOMC rate decision
+2017-07-12,fomc_minutes,Approx. FOMC minutes
+2017-07-13,tips_auction_announce,Approximate TIPS auction (10y)
+2017-07-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-07-19,fomc_statement,Approx. FOMC rate decision
+2017-07-20,tips_auction,Approximate TIPS auction (10y)
+2017-07-25,tips_auction_settlement,Approximate TIPS auction (10y)
+2017-08-02,treasury_refunding,Treasury refunding statement
+2017-08-09,fomc_minutes,Approx. FOMC minutes
+2017-08-10,tips_auction_announce,Approximate TIPS auction (5y)
+2017-08-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-08-17,tips_auction,Approximate TIPS auction (5y)
+2017-08-22,tips_auction_settlement,Approximate TIPS auction (5y)
+2017-09-14,tips_auction_announce,Approximate TIPS auction (10y)
+2017-09-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-09-20,fomc_statement,Approx. FOMC rate decision
+2017-09-21,tips_auction,Approximate TIPS auction (10y)
+2017-09-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2017-10-11,fomc_minutes,Approx. FOMC minutes
+2017-10-12,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2017-10-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-10-19,tips_auction,Approximate TIPS auction (5y/20y)
+2017-10-24,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2017-11-01,treasury_refunding,Treasury refunding statement
+2017-11-09,tips_auction_announce,Approximate TIPS auction (10y)
+2017-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-11-15,fomc_statement,Approx. FOMC rate decision
+2017-11-16,tips_auction,Approximate TIPS auction (10y)
+2017-11-21,tips_auction_settlement,Approximate TIPS auction (10y)
+2017-12-06,fomc_minutes,Approx. FOMC minutes
+2017-12-14,tips_auction_announce,Approximate TIPS auction (5y)
+2017-12-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2017-12-20,fomc_statement,Approx. FOMC rate decision
+2017-12-21,tips_auction,Approximate TIPS auction (5y)
+2017-12-26,tips_auction_settlement,Approximate TIPS auction (5y)
+2018-01-10,fomc_minutes,Approx. FOMC minutes
+2018-01-11,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2018-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-01-17,fomc_statement,Approx. FOMC rate decision
+2018-01-18,tips_auction,Approximate TIPS auction (5y/10y)
+2018-01-23,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2018-02-07,treasury_refunding,Treasury refunding statement
+2018-02-07,fomc_minutes,Approx. FOMC minutes
+2018-02-08,tips_auction_announce,Approximate TIPS auction (20y)
+2018-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-02-15,tips_auction,Approximate TIPS auction (20y)
+2018-02-20,tips_auction_settlement,Approximate TIPS auction (20y)
+2018-03-08,tips_auction_announce,Approximate TIPS auction (10y)
+2018-03-15,tips_auction,Approximate TIPS auction (10y)
+2018-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-03-20,tips_auction_settlement,Approximate TIPS auction (10y)
+2018-03-21,fomc_statement,Approx. FOMC rate decision
+2018-04-11,fomc_minutes,Approx. FOMC minutes
+2018-04-12,tips_auction_announce,Approximate TIPS auction (5y)
+2018-04-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-04-18,fomc_statement,Approx. FOMC rate decision
+2018-04-19,tips_auction,Approximate TIPS auction (5y)
+2018-04-24,tips_auction_settlement,Approximate TIPS auction (5y)
+2018-05-02,treasury_refunding,Treasury refunding statement
+2018-05-09,fomc_minutes,Approx. FOMC minutes
+2018-05-10,tips_auction_announce,Approximate TIPS auction (10y)
+2018-05-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-05-17,tips_auction,Approximate TIPS auction (10y)
+2018-05-22,tips_auction_settlement,Approximate TIPS auction (10y)
+2018-06-14,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2018-06-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-06-20,fomc_statement,Approx. FOMC rate decision
+2018-06-21,tips_auction,Approximate TIPS auction (5y/20y)
+2018-06-26,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2018-07-11,fomc_minutes,Approx. FOMC minutes
+2018-07-12,tips_auction_announce,Approximate TIPS auction (10y)
+2018-07-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-07-18,fomc_statement,Approx. FOMC rate decision
+2018-07-19,tips_auction,Approximate TIPS auction (10y)
+2018-07-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2018-08-01,treasury_refunding,Treasury refunding statement
+2018-08-08,fomc_minutes,Approx. FOMC minutes
+2018-08-09,tips_auction_announce,Approximate TIPS auction (5y)
+2018-08-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-08-16,tips_auction,Approximate TIPS auction (5y)
+2018-08-21,tips_auction_settlement,Approximate TIPS auction (5y)
+2018-09-13,tips_auction_announce,Approximate TIPS auction (10y)
+2018-09-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-09-19,fomc_statement,Approx. FOMC rate decision
+2018-09-20,tips_auction,Approximate TIPS auction (10y)
+2018-09-25,tips_auction_settlement,Approximate TIPS auction (10y)
+2018-10-10,fomc_minutes,Approx. FOMC minutes
+2018-10-11,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2018-10-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-10-18,tips_auction,Approximate TIPS auction (5y/20y)
+2018-10-23,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2018-11-07,treasury_refunding,Treasury refunding statement
+2018-11-08,tips_auction_announce,Approximate TIPS auction (10y)
+2018-11-15,tips_auction,Approximate TIPS auction (10y)
+2018-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-11-20,tips_auction_settlement,Approximate TIPS auction (10y)
+2018-11-21,fomc_statement,Approx. FOMC rate decision
+2018-12-12,fomc_minutes,Approx. FOMC minutes
+2018-12-13,tips_auction_announce,Approximate TIPS auction (5y)
+2018-12-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2018-12-19,fomc_statement,Approx. FOMC rate decision
+2018-12-20,tips_auction,Approximate TIPS auction (5y)
+2018-12-25,tips_auction_settlement,Approximate TIPS auction (5y)
+2019-01-09,fomc_minutes,Approx. FOMC minutes
+2019-01-10,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2019-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-01-16,fomc_statement,Approx. FOMC rate decision
+2019-01-17,tips_auction,Approximate TIPS auction (5y/10y)
+2019-01-22,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2019-02-06,fomc_minutes,Approx. FOMC minutes
+2019-02-06,treasury_refunding,Treasury refunding statement
+2019-02-14,tips_auction_announce,Approximate TIPS auction (20y)
+2019-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-02-21,tips_auction,Approximate TIPS auction (20y)
+2019-02-26,tips_auction_settlement,Approximate TIPS auction (20y)
+2019-03-14,tips_auction_announce,Approximate TIPS auction (10y)
+2019-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-03-20,fomc_statement,Approx. FOMC rate decision
+2019-03-21,tips_auction,Approximate TIPS auction (10y)
+2019-03-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2019-04-10,fomc_minutes,Approx. FOMC minutes
+2019-04-11,tips_auction_announce,Approximate TIPS auction (5y)
+2019-04-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-04-17,fomc_statement,Approx. FOMC rate decision
+2019-04-18,tips_auction,Approximate TIPS auction (5y)
+2019-04-23,tips_auction_settlement,Approximate TIPS auction (5y)
+2019-05-01,treasury_refunding,Treasury refunding statement
+2019-05-08,fomc_minutes,Approx. FOMC minutes
+2019-05-09,tips_auction_announce,Approximate TIPS auction (10y)
+2019-05-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-05-16,tips_auction,Approximate TIPS auction (10y)
+2019-05-21,tips_auction_settlement,Approximate TIPS auction (10y)
+2019-06-13,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2019-06-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-06-19,fomc_statement,Approx. FOMC rate decision
+2019-06-20,tips_auction,Approximate TIPS auction (5y/20y)
+2019-06-25,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2019-07-10,fomc_minutes,Approx. FOMC minutes
+2019-07-11,tips_auction_announce,Approximate TIPS auction (10y)
+2019-07-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-07-17,fomc_statement,Approx. FOMC rate decision
+2019-07-18,tips_auction,Approximate TIPS auction (10y)
+2019-07-23,tips_auction_settlement,Approximate TIPS auction (10y)
+2019-08-07,treasury_refunding,Treasury refunding statement
+2019-08-07,fomc_minutes,Approx. FOMC minutes
+2019-08-08,tips_auction_announce,Approximate TIPS auction (5y)
+2019-08-15,tips_auction,Approximate TIPS auction (5y)
+2019-08-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-08-20,tips_auction_settlement,Approximate TIPS auction (5y)
+2019-09-12,tips_auction_announce,Approximate TIPS auction (10y)
+2019-09-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-09-18,fomc_statement,Approx. FOMC rate decision
+2019-09-19,tips_auction,Approximate TIPS auction (10y)
+2019-09-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2019-10-09,fomc_minutes,Approx. FOMC minutes
+2019-10-10,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2019-10-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-10-17,tips_auction,Approximate TIPS auction (5y/20y)
+2019-10-22,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2019-11-06,treasury_refunding,Treasury refunding statement
+2019-11-14,tips_auction_announce,Approximate TIPS auction (10y)
+2019-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-11-20,fomc_statement,Approx. FOMC rate decision
+2019-11-21,tips_auction,Approximate TIPS auction (10y)
+2019-11-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2019-12-11,fomc_minutes,Approx. FOMC minutes
+2019-12-12,tips_auction_announce,Approximate TIPS auction (5y)
+2019-12-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2019-12-18,fomc_statement,Approx. FOMC rate decision
+2019-12-19,tips_auction,Approximate TIPS auction (5y)
+2019-12-24,tips_auction_settlement,Approximate TIPS auction (5y)
+2020-01-08,fomc_minutes,Approx. FOMC minutes
+2020-01-09,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2020-01-15,fomc_statement,Approx. FOMC rate decision
+2020-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-01-16,tips_auction,Approximate TIPS auction (5y/10y)
+2020-01-21,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2020-02-05,fomc_minutes,Approx. FOMC minutes
+2020-02-05,treasury_refunding,Treasury refunding statement
+2020-02-13,tips_auction_announce,Approximate TIPS auction (20y)
+2020-02-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-02-20,tips_auction,Approximate TIPS auction (20y)
+2020-02-25,tips_auction_settlement,Approximate TIPS auction (20y)
+2020-03-03,fomc_statement,Emergency FOMC action
+2020-03-12,tips_auction_announce,Approximate TIPS auction (10y)
+2020-03-15,fomc_statement,Emergency FOMC action
+2020-03-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-03-18,fomc_statement,Approx. FOMC rate decision
+2020-03-19,tips_auction,Approximate TIPS auction (10y)
+2020-03-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2020-04-08,fomc_minutes,Approx. FOMC minutes
+2020-04-09,tips_auction_announce,Approximate TIPS auction (5y)
+2020-04-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-04-15,fomc_statement,Approx. FOMC rate decision
+2020-04-16,tips_auction,Approximate TIPS auction (5y)
+2020-04-21,tips_auction_settlement,Approximate TIPS auction (5y)
+2020-05-06,treasury_refunding,Treasury refunding statement
+2020-05-06,fomc_minutes,Approx. FOMC minutes
+2020-05-14,tips_auction_announce,Approximate TIPS auction (10y)
+2020-05-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-05-21,tips_auction,Approximate TIPS auction (10y)
+2020-05-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2020-06-11,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2020-06-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-06-17,fomc_statement,Approx. FOMC rate decision
+2020-06-18,tips_auction,Approximate TIPS auction (5y/20y)
+2020-06-23,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2020-07-08,fomc_minutes,Approx. FOMC minutes
+2020-07-09,tips_auction_announce,Approximate TIPS auction (10y)
+2020-07-15,fomc_statement,Approx. FOMC rate decision
+2020-07-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-07-16,tips_auction,Approximate TIPS auction (10y)
+2020-07-21,tips_auction_settlement,Approximate TIPS auction (10y)
+2020-08-05,fomc_minutes,Approx. FOMC minutes
+2020-08-05,treasury_refunding,Treasury refunding statement
+2020-08-13,tips_auction_announce,Approximate TIPS auction (5y)
+2020-08-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-08-20,tips_auction,Approximate TIPS auction (5y)
+2020-08-25,tips_auction_settlement,Approximate TIPS auction (5y)
+2020-09-10,tips_auction_announce,Approximate TIPS auction (10y)
+2020-09-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-09-16,fomc_statement,Approx. FOMC rate decision
+2020-09-17,tips_auction,Approximate TIPS auction (10y)
+2020-09-22,tips_auction_settlement,Approximate TIPS auction (10y)
+2020-10-07,fomc_minutes,Approx. FOMC minutes
+2020-10-08,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2020-10-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-10-15,tips_auction,Approximate TIPS auction (5y/20y)
+2020-10-20,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2020-11-04,treasury_refunding,Treasury refunding statement
+2020-11-12,tips_auction_announce,Approximate TIPS auction (10y)
+2020-11-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-11-18,fomc_statement,Approx. FOMC rate decision
+2020-11-19,tips_auction,Approximate TIPS auction (10y)
+2020-11-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2020-12-09,fomc_minutes,Approx. FOMC minutes
+2020-12-10,tips_auction_announce,Approximate TIPS auction (5y)
+2020-12-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2020-12-16,fomc_statement,Approx. FOMC rate decision
+2020-12-17,tips_auction,Approximate TIPS auction (5y)
+2020-12-22,tips_auction_settlement,Approximate TIPS auction (5y)
+2021-01-06,fomc_minutes,Approx. FOMC minutes
+2021-01-14,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2021-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-01-20,fomc_statement,Approx. FOMC rate decision
+2021-01-21,tips_auction,Approximate TIPS auction (5y/10y)
+2021-01-26,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2021-02-03,treasury_refunding,Treasury refunding statement
+2021-02-10,fomc_minutes,Approx. FOMC minutes
+2021-02-11,tips_auction_announce,Approximate TIPS auction (20y)
+2021-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-02-18,tips_auction,Approximate TIPS auction (20y)
+2021-02-23,tips_auction_settlement,Approximate TIPS auction (20y)
+2021-03-11,tips_auction_announce,Approximate TIPS auction (10y)
+2021-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-03-17,fomc_statement,Approx. FOMC rate decision
+2021-03-18,tips_auction,Approximate TIPS auction (10y)
+2021-03-23,tips_auction_settlement,Approximate TIPS auction (10y)
+2021-04-07,fomc_minutes,Approx. FOMC minutes
+2021-04-08,tips_auction_announce,Approximate TIPS auction (5y)
+2021-04-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-04-15,tips_auction,Approximate TIPS auction (5y)
+2021-04-20,tips_auction_settlement,Approximate TIPS auction (5y)
+2021-04-21,fomc_statement,Approx. FOMC rate decision
+2021-05-05,treasury_refunding,Treasury refunding statement
+2021-05-12,fomc_minutes,Approx. FOMC minutes
+2021-05-13,tips_auction_announce,Approximate TIPS auction (10y)
+2021-05-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-05-20,tips_auction,Approximate TIPS auction (10y)
+2021-05-25,tips_auction_settlement,Approximate TIPS auction (10y)
+2021-06-10,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2021-06-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-06-16,fomc_statement,Approx. FOMC rate decision
+2021-06-17,tips_auction,Approximate TIPS auction (5y/20y)
+2021-06-22,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2021-07-07,fomc_minutes,Approx. FOMC minutes
+2021-07-08,tips_auction_announce,Approximate TIPS auction (10y)
+2021-07-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-07-15,tips_auction,Approximate TIPS auction (10y)
+2021-07-20,tips_auction_settlement,Approximate TIPS auction (10y)
+2021-07-21,fomc_statement,Approx. FOMC rate decision
+2021-08-04,treasury_refunding,Treasury refunding statement
+2021-08-11,fomc_minutes,Approx. FOMC minutes
+2021-08-12,tips_auction_announce,Approximate TIPS auction (5y)
+2021-08-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-08-19,tips_auction,Approximate TIPS auction (5y)
+2021-08-24,tips_auction_settlement,Approximate TIPS auction (5y)
+2021-09-09,tips_auction_announce,Approximate TIPS auction (10y)
+2021-09-15,fomc_statement,Approx. FOMC rate decision
+2021-09-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-09-16,tips_auction,Approximate TIPS auction (10y)
+2021-09-21,tips_auction_settlement,Approximate TIPS auction (10y)
+2021-10-06,fomc_minutes,Approx. FOMC minutes
+2021-10-14,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2021-10-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-10-21,tips_auction,Approximate TIPS auction (5y/20y)
+2021-10-26,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2021-11-03,treasury_refunding,Treasury refunding statement
+2021-11-11,tips_auction_announce,Approximate TIPS auction (10y)
+2021-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-11-17,fomc_statement,Approx. FOMC rate decision
+2021-11-18,tips_auction,Approximate TIPS auction (10y)
+2021-11-23,tips_auction_settlement,Approximate TIPS auction (10y)
+2021-12-08,fomc_minutes,Approx. FOMC minutes
+2021-12-09,tips_auction_announce,Approximate TIPS auction (5y)
+2021-12-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2021-12-15,fomc_statement,Approx. FOMC rate decision
+2021-12-16,tips_auction,Approximate TIPS auction (5y)
+2021-12-21,tips_auction_settlement,Approximate TIPS auction (5y)
+2022-01-05,fomc_minutes,Approx. FOMC minutes
+2022-01-13,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2022-01-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2022-01-19,fomc_statement,Approx. FOMC rate decision
+2022-01-20,tips_auction,Approximate TIPS auction (5y/10y)
+2022-01-25,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2022-02-02,treasury_refunding,Treasury refunding statement
+2022-02-09,fomc_minutes,Approx. FOMC minutes
+2022-02-10,tips_auction_announce,Approximate TIPS auction (20y)
+2022-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2022-02-17,tips_auction,Approximate TIPS auction (20y)
+2022-02-22,tips_auction_settlement,Approximate TIPS auction (20y)
+2022-03-10,tips_auction_announce,Approximate TIPS auction (10y)
+2022-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2022-03-16,fomc_statement,Approx. FOMC rate decision
+2022-03-17,tips_auction,Approximate TIPS auction (10y)
+2022-03-22,tips_auction_settlement,Approximate TIPS auction (10y)
+2022-04-06,fomc_minutes,Approx. FOMC minutes
+2022-04-14,tips_auction_announce,Approximate TIPS auction (5y)
+2022-04-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2022-04-20,fomc_statement,Approx. FOMC rate decision
+2022-04-21,tips_auction,Approximate TIPS auction (5y)
+2022-04-26,tips_auction_settlement,Approximate TIPS auction (5y)
+2022-05-04,treasury_refunding,Treasury refunding statement
+2022-05-11,fomc_minutes,Approx. FOMC minutes
+2022-05-12,tips_auction_announce,Approximate TIPS auction (10y)
+2022-05-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2022-05-19,tips_auction,Approximate TIPS auction (10y)
+2022-05-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2022-06-09,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2022-06-15,fomc_statement,Approx. FOMC rate decision
+2022-06-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2022-06-16,tips_auction,Approximate TIPS auction (5y/20y)
+2022-06-21,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2022-07-06,fomc_minutes,Approx. FOMC minutes
+2022-07-14,tips_auction_announce,Approximate TIPS auction (10y)
+2022-07-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2022-07-20,fomc_statement,Approx. FOMC rate decision
+2022-07-21,tips_auction,Approximate TIPS auction (10y)
+2022-07-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2022-08-03,treasury_refunding,Treasury refunding statement
+2022-08-10,fomc_minutes,Approx. FOMC minutes
+2022-08-11,tips_auction_announce,Approximate TIPS auction (5y)
+2022-08-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2022-08-18,tips_auction,Approximate TIPS auction (5y)
+2022-08-23,tips_auction_settlement,Approximate TIPS auction (5y)
+2022-09-08,tips_auction_announce,Approximate TIPS auction (10y)
+2022-09-15,tips_auction,Approximate TIPS auction (10y)
+2022-09-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2022-09-20,tips_auction_settlement,Approximate TIPS auction (10y)
+2022-09-21,fomc_statement,Approx. FOMC rate decision
+2022-10-12,fomc_minutes,Approx. FOMC minutes
+2022-10-13,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2022-10-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2022-10-20,tips_auction,Approximate TIPS auction (5y/20y)
+2022-10-25,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2022-11-02,treasury_refunding,Treasury refunding statement
+2022-11-10,tips_auction_announce,Approximate TIPS auction (10y)
+2022-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2022-11-16,fomc_statement,Approx. FOMC rate decision
+2022-11-17,tips_auction,Approximate TIPS auction (10y)
+2022-11-22,tips_auction_settlement,Approximate TIPS auction (10y)
+2022-12-07,fomc_minutes,Approx. FOMC minutes
+2022-12-08,tips_auction_announce,Approximate TIPS auction (5y)
+2022-12-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
 2022-12-15,tips_auction,Approximate TIPS auction (5y)
-2023-01-04,fomc_minutes,FOMC minutes release
-2023-01-12,tips_auction,Approximate TIPS auction (5y/10y)
-2023-01-12,cpi_release,Monthly CPI release (BLS)
-2023-02-01,fomc_statement,FOMC rate decision
-2023-02-01,treasury_refunding,Quarterly refunding statement
-2023-02-09,tips_auction,Approximate TIPS auction (20y)
-2023-02-14,cpi_release,Monthly CPI release (BLS)
-2023-02-22,fomc_minutes,FOMC minutes release
-2023-03-09,tips_auction,Approximate TIPS auction (5y/10y)
-2023-03-14,cpi_release,Monthly CPI release (BLS)
-2023-03-22,fomc_statement,FOMC rate decision
-2023-04-12,fomc_minutes,FOMC minutes release
-2023-04-12,cpi_release,Monthly CPI release (BLS)
-2023-04-13,tips_auction,Approximate TIPS auction (5y)
-2023-05-03,treasury_refunding,Quarterly refunding statement
-2023-05-03,fomc_statement,FOMC rate decision
-2023-05-10,cpi_release,Monthly CPI release (BLS)
-2023-05-11,tips_auction,Approximate TIPS auction (10y)
-2023-05-24,fomc_minutes,FOMC minutes release
-2023-06-13,cpi_release,Monthly CPI release (BLS)
-2023-06-14,fomc_statement,FOMC rate decision
+2022-12-20,tips_auction_settlement,Approximate TIPS auction (5y)
+2022-12-21,fomc_statement,Approx. FOMC rate decision
+2023-01-11,fomc_minutes,Approx. FOMC minutes
+2023-01-12,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2023-01-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-01-18,fomc_statement,Approx. FOMC rate decision
+2023-01-19,tips_auction,Approximate TIPS auction (5y/10y)
+2023-01-24,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2023-02-01,treasury_refunding,Treasury refunding statement
+2023-02-08,fomc_minutes,Approx. FOMC minutes
+2023-02-09,tips_auction_announce,Approximate TIPS auction (20y)
+2023-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-02-16,tips_auction,Approximate TIPS auction (20y)
+2023-02-21,tips_auction_settlement,Approximate TIPS auction (20y)
+2023-03-09,tips_auction_announce,Approximate TIPS auction (10y)
+2023-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-03-15,fomc_statement,Approx. FOMC rate decision
+2023-03-16,tips_auction,Approximate TIPS auction (10y)
+2023-03-21,tips_auction_settlement,Approximate TIPS auction (10y)
+2023-04-05,fomc_minutes,Approx. FOMC minutes
+2023-04-13,tips_auction_announce,Approximate TIPS auction (5y)
+2023-04-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-04-19,fomc_statement,Approx. FOMC rate decision
+2023-04-20,tips_auction,Approximate TIPS auction (5y)
+2023-04-25,tips_auction_settlement,Approximate TIPS auction (5y)
+2023-05-03,treasury_refunding,Treasury refunding statement
+2023-05-10,fomc_minutes,Approx. FOMC minutes
+2023-05-11,tips_auction_announce,Approximate TIPS auction (10y)
+2023-05-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-05-18,tips_auction,Approximate TIPS auction (10y)
+2023-05-23,tips_auction_settlement,Approximate TIPS auction (10y)
+2023-06-08,tips_auction_announce,Approximate TIPS auction (5y/20y)
 2023-06-15,tips_auction,Approximate TIPS auction (5y/20y)
-2023-07-05,fomc_minutes,FOMC minutes release
-2023-07-12,cpi_release,Monthly CPI release (BLS)
-2023-07-13,tips_auction,Approximate TIPS auction (10y)
-2023-07-26,fomc_statement,FOMC rate decision
-2023-08-02,treasury_refunding,Quarterly refunding statement
-2023-08-10,cpi_release,Monthly CPI release (BLS)
-2023-08-10,tips_auction,Approximate TIPS auction (5y)
-2023-08-16,fomc_minutes,FOMC minutes release
-2023-09-13,cpi_release,Monthly CPI release (BLS)
-2023-09-14,tips_auction,Approximate TIPS auction (10y)
-2023-09-20,fomc_statement,FOMC rate decision
-2023-10-11,fomc_minutes,FOMC minutes release
-2023-10-12,cpi_release,Monthly CPI release (BLS)
-2023-10-12,tips_auction,Approximate TIPS auction (5y/20y)
-2023-11-01,fomc_statement,FOMC rate decision
-2023-11-01,treasury_refunding,Quarterly refunding statement
-2023-11-09,tips_auction,Approximate TIPS auction (10y)
-2023-11-14,cpi_release,Monthly CPI release (BLS)
-2023-11-21,fomc_minutes,FOMC minutes release
-2023-12-12,cpi_release,Monthly CPI release (BLS)
-2023-12-13,fomc_statement,FOMC rate decision
-2023-12-14,tips_auction,Approximate TIPS auction (5y)
-2024-01-03,fomc_minutes,FOMC minutes release
-2024-01-11,cpi_release,Monthly CPI release (BLS)
-2024-01-11,tips_auction,Approximate TIPS auction (5y/10y)
-2024-01-31,fomc_statement,FOMC rate decision
-2024-02-07,treasury_refunding,Quarterly refunding statement
-2024-02-13,cpi_release,Monthly CPI release (BLS)
+2023-06-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-06-20,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2023-06-21,fomc_statement,Approx. FOMC rate decision
+2023-07-12,fomc_minutes,Approx. FOMC minutes
+2023-07-13,tips_auction_announce,Approximate TIPS auction (10y)
+2023-07-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-07-19,fomc_statement,Approx. FOMC rate decision
+2023-07-20,tips_auction,Approximate TIPS auction (10y)
+2023-07-25,tips_auction_settlement,Approximate TIPS auction (10y)
+2023-08-02,treasury_refunding,Treasury refunding statement
+2023-08-09,fomc_minutes,Approx. FOMC minutes
+2023-08-10,tips_auction_announce,Approximate TIPS auction (5y)
+2023-08-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-08-17,tips_auction,Approximate TIPS auction (5y)
+2023-08-22,tips_auction_settlement,Approximate TIPS auction (5y)
+2023-09-14,tips_auction_announce,Approximate TIPS auction (10y)
+2023-09-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-09-20,fomc_statement,Approx. FOMC rate decision
+2023-09-21,tips_auction,Approximate TIPS auction (10y)
+2023-09-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2023-10-11,fomc_minutes,Approx. FOMC minutes
+2023-10-12,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2023-10-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-10-19,tips_auction,Approximate TIPS auction (5y/20y)
+2023-10-24,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2023-11-01,treasury_refunding,Treasury refunding statement
+2023-11-09,tips_auction_announce,Approximate TIPS auction (10y)
+2023-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-11-15,fomc_statement,Approx. FOMC rate decision
+2023-11-16,tips_auction,Approximate TIPS auction (10y)
+2023-11-21,tips_auction_settlement,Approximate TIPS auction (10y)
+2023-12-06,fomc_minutes,Approx. FOMC minutes
+2023-12-14,tips_auction_announce,Approximate TIPS auction (5y)
+2023-12-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2023-12-20,fomc_statement,Approx. FOMC rate decision
+2023-12-21,tips_auction,Approximate TIPS auction (5y)
+2023-12-26,tips_auction_settlement,Approximate TIPS auction (5y)
+2024-01-10,fomc_minutes,Approx. FOMC minutes
+2024-01-11,tips_auction_announce,Approximate TIPS auction (5y/10y)
+2024-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2024-01-17,fomc_statement,Approx. FOMC rate decision
+2024-01-18,tips_auction,Approximate TIPS auction (5y/10y)
+2024-01-23,tips_auction_settlement,Approximate TIPS auction (5y/10y)
+2024-02-07,fomc_minutes,Approx. FOMC minutes
+2024-02-07,treasury_refunding,Treasury refunding statement
+2024-02-08,tips_auction_announce,Approximate TIPS auction (20y)
 2024-02-15,tips_auction,Approximate TIPS auction (20y)
-2024-02-21,fomc_minutes,FOMC minutes release
-2024-03-12,cpi_release,Monthly CPI release (BLS)
-2024-03-14,tips_auction,Approximate TIPS auction (5y/10y)
-2024-03-20,fomc_statement,FOMC rate decision
-2024-04-10,fomc_minutes,FOMC minutes release
-2024-04-10,cpi_release,Monthly CPI release (BLS)
-2024-04-11,tips_auction,Approximate TIPS auction (5y)
-2024-05-01,fomc_statement,FOMC rate decision
-2024-05-01,treasury_refunding,Quarterly refunding statement
-2024-05-09,tips_auction,Approximate TIPS auction (10y)
-2024-05-15,cpi_release,Monthly CPI release (BLS)
-2024-05-22,fomc_minutes,FOMC minutes release
-2024-06-12,fomc_statement,FOMC rate decision
-2024-06-12,cpi_release,Monthly CPI release (BLS)
-2024-06-13,tips_auction,Approximate TIPS auction (5y/20y)
-2024-07-03,fomc_minutes,FOMC minutes release
-2024-07-11,cpi_release,Monthly CPI release (BLS)
-2024-07-11,tips_auction,Approximate TIPS auction (10y)
-2024-07-31,fomc_statement,FOMC rate decision
-2024-08-07,treasury_refunding,Quarterly refunding statement
-2024-08-14,cpi_release,Monthly CPI release (BLS)
+2024-02-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2024-02-20,tips_auction_settlement,Approximate TIPS auction (20y)
+2024-03-14,tips_auction_announce,Approximate TIPS auction (10y)
+2024-03-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2024-03-20,fomc_statement,Approx. FOMC rate decision
+2024-03-21,tips_auction,Approximate TIPS auction (10y)
+2024-03-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2024-04-10,fomc_minutes,Approx. FOMC minutes
+2024-04-11,tips_auction_announce,Approximate TIPS auction (5y)
+2024-04-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2024-04-17,fomc_statement,Approx. FOMC rate decision
+2024-04-18,tips_auction,Approximate TIPS auction (5y)
+2024-04-23,tips_auction_settlement,Approximate TIPS auction (5y)
+2024-05-01,treasury_refunding,Treasury refunding statement
+2024-05-08,fomc_minutes,Approx. FOMC minutes
+2024-05-09,tips_auction_announce,Approximate TIPS auction (10y)
+2024-05-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2024-05-16,tips_auction,Approximate TIPS auction (10y)
+2024-05-21,tips_auction_settlement,Approximate TIPS auction (10y)
+2024-06-13,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2024-06-17,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2024-06-19,fomc_statement,Approx. FOMC rate decision
+2024-06-20,tips_auction,Approximate TIPS auction (5y/20y)
+2024-06-25,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2024-07-10,fomc_minutes,Approx. FOMC minutes
+2024-07-11,tips_auction_announce,Approximate TIPS auction (10y)
+2024-07-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2024-07-17,fomc_statement,Approx. FOMC rate decision
+2024-07-18,tips_auction,Approximate TIPS auction (10y)
+2024-07-23,tips_auction_settlement,Approximate TIPS auction (10y)
+2024-08-07,fomc_minutes,Approx. FOMC minutes
+2024-08-07,treasury_refunding,Treasury refunding statement
+2024-08-08,tips_auction_announce,Approximate TIPS auction (5y)
+2024-08-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
 2024-08-15,tips_auction,Approximate TIPS auction (5y)
-2024-08-21,fomc_minutes,FOMC minutes release
-2024-09-11,cpi_release,Monthly CPI release (BLS)
-2024-09-12,tips_auction,Approximate TIPS auction (10y)
-2024-09-18,fomc_statement,FOMC rate decision
-2024-10-09,fomc_minutes,FOMC minutes release
-2024-10-10,cpi_release,Monthly CPI release (BLS)
-2024-10-10,tips_auction,Approximate TIPS auction (5y/20y)
-2024-11-06,treasury_refunding,Quarterly refunding statement
-2024-11-07,fomc_statement,FOMC rate decision
-2024-11-13,cpi_release,Monthly CPI release (BLS)
-2024-11-14,tips_auction,Approximate TIPS auction (10y)
-2024-11-20,fomc_minutes,FOMC minutes release
-2024-12-11,cpi_release,Monthly CPI release (BLS)
-2024-12-12,tips_auction,Approximate TIPS auction (5y)
-2024-12-18,fomc_statement,FOMC rate decision
+2024-08-20,tips_auction_settlement,Approximate TIPS auction (5y)
+2024-09-12,tips_auction_announce,Approximate TIPS auction (10y)
+2024-09-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2024-09-18,fomc_statement,Approx. FOMC rate decision
+2024-09-19,tips_auction,Approximate TIPS auction (10y)
+2024-09-24,tips_auction_settlement,Approximate TIPS auction (10y)
+2024-10-09,fomc_minutes,Approx. FOMC minutes
+2024-10-10,tips_auction_announce,Approximate TIPS auction (5y/20y)
+2024-10-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2024-10-17,tips_auction,Approximate TIPS auction (5y/20y)
+2024-10-22,tips_auction_settlement,Approximate TIPS auction (5y/20y)
+2024-11-06,treasury_refunding,Treasury refunding statement
+2024-11-14,tips_auction_announce,Approximate TIPS auction (10y)
+2024-11-15,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2024-11-20,fomc_statement,Approx. FOMC rate decision
+2024-11-21,tips_auction,Approximate TIPS auction (10y)
+2024-11-26,tips_auction_settlement,Approximate TIPS auction (10y)
+2024-12-11,fomc_minutes,Approx. FOMC minutes
+2024-12-12,tips_auction_announce,Approximate TIPS auction (5y)
+2024-12-16,cpi_release,Approx. CPI release (BLS schedule heuristic)
+2024-12-18,fomc_statement,Approx. FOMC rate decision
+2024-12-19,tips_auction,Approximate TIPS auction (5y)
+2024-12-24,tips_auction_settlement,Approximate TIPS auction (5y)
