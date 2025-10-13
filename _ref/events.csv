@@ -1,0 +1,99 @@
+date,event_type,details
+2022-10-13,cpi_release,Monthly CPI release (BLS)
+2022-10-13,tips_auction,Approximate TIPS auction (5y/20y)
+2022-11-02,treasury_refunding,Quarterly refunding statement
+2022-11-02,fomc_statement,FOMC rate decision
+2022-11-10,tips_auction,Approximate TIPS auction (10y)
+2022-11-10,cpi_release,Monthly CPI release (BLS)
+2022-11-23,fomc_minutes,FOMC minutes release
+2022-12-13,cpi_release,Monthly CPI release (BLS)
+2022-12-14,fomc_statement,FOMC rate decision
+2022-12-15,tips_auction,Approximate TIPS auction (5y)
+2023-01-04,fomc_minutes,FOMC minutes release
+2023-01-12,tips_auction,Approximate TIPS auction (5y/10y)
+2023-01-12,cpi_release,Monthly CPI release (BLS)
+2023-02-01,fomc_statement,FOMC rate decision
+2023-02-01,treasury_refunding,Quarterly refunding statement
+2023-02-09,tips_auction,Approximate TIPS auction (20y)
+2023-02-14,cpi_release,Monthly CPI release (BLS)
+2023-02-22,fomc_minutes,FOMC minutes release
+2023-03-09,tips_auction,Approximate TIPS auction (5y/10y)
+2023-03-14,cpi_release,Monthly CPI release (BLS)
+2023-03-22,fomc_statement,FOMC rate decision
+2023-04-12,fomc_minutes,FOMC minutes release
+2023-04-12,cpi_release,Monthly CPI release (BLS)
+2023-04-13,tips_auction,Approximate TIPS auction (5y)
+2023-05-03,treasury_refunding,Quarterly refunding statement
+2023-05-03,fomc_statement,FOMC rate decision
+2023-05-10,cpi_release,Monthly CPI release (BLS)
+2023-05-11,tips_auction,Approximate TIPS auction (10y)
+2023-05-24,fomc_minutes,FOMC minutes release
+2023-06-13,cpi_release,Monthly CPI release (BLS)
+2023-06-14,fomc_statement,FOMC rate decision
+2023-06-15,tips_auction,Approximate TIPS auction (5y/20y)
+2023-07-05,fomc_minutes,FOMC minutes release
+2023-07-12,cpi_release,Monthly CPI release (BLS)
+2023-07-13,tips_auction,Approximate TIPS auction (10y)
+2023-07-26,fomc_statement,FOMC rate decision
+2023-08-02,treasury_refunding,Quarterly refunding statement
+2023-08-10,cpi_release,Monthly CPI release (BLS)
+2023-08-10,tips_auction,Approximate TIPS auction (5y)
+2023-08-16,fomc_minutes,FOMC minutes release
+2023-09-13,cpi_release,Monthly CPI release (BLS)
+2023-09-14,tips_auction,Approximate TIPS auction (10y)
+2023-09-20,fomc_statement,FOMC rate decision
+2023-10-11,fomc_minutes,FOMC minutes release
+2023-10-12,cpi_release,Monthly CPI release (BLS)
+2023-10-12,tips_auction,Approximate TIPS auction (5y/20y)
+2023-11-01,fomc_statement,FOMC rate decision
+2023-11-01,treasury_refunding,Quarterly refunding statement
+2023-11-09,tips_auction,Approximate TIPS auction (10y)
+2023-11-14,cpi_release,Monthly CPI release (BLS)
+2023-11-21,fomc_minutes,FOMC minutes release
+2023-12-12,cpi_release,Monthly CPI release (BLS)
+2023-12-13,fomc_statement,FOMC rate decision
+2023-12-14,tips_auction,Approximate TIPS auction (5y)
+2024-01-03,fomc_minutes,FOMC minutes release
+2024-01-11,cpi_release,Monthly CPI release (BLS)
+2024-01-11,tips_auction,Approximate TIPS auction (5y/10y)
+2024-01-31,fomc_statement,FOMC rate decision
+2024-02-07,treasury_refunding,Quarterly refunding statement
+2024-02-13,cpi_release,Monthly CPI release (BLS)
+2024-02-15,tips_auction,Approximate TIPS auction (20y)
+2024-02-21,fomc_minutes,FOMC minutes release
+2024-03-12,cpi_release,Monthly CPI release (BLS)
+2024-03-14,tips_auction,Approximate TIPS auction (5y/10y)
+2024-03-20,fomc_statement,FOMC rate decision
+2024-04-10,fomc_minutes,FOMC minutes release
+2024-04-10,cpi_release,Monthly CPI release (BLS)
+2024-04-11,tips_auction,Approximate TIPS auction (5y)
+2024-05-01,fomc_statement,FOMC rate decision
+2024-05-01,treasury_refunding,Quarterly refunding statement
+2024-05-09,tips_auction,Approximate TIPS auction (10y)
+2024-05-15,cpi_release,Monthly CPI release (BLS)
+2024-05-22,fomc_minutes,FOMC minutes release
+2024-06-12,fomc_statement,FOMC rate decision
+2024-06-12,cpi_release,Monthly CPI release (BLS)
+2024-06-13,tips_auction,Approximate TIPS auction (5y/20y)
+2024-07-03,fomc_minutes,FOMC minutes release
+2024-07-11,cpi_release,Monthly CPI release (BLS)
+2024-07-11,tips_auction,Approximate TIPS auction (10y)
+2024-07-31,fomc_statement,FOMC rate decision
+2024-08-07,treasury_refunding,Quarterly refunding statement
+2024-08-14,cpi_release,Monthly CPI release (BLS)
+2024-08-15,tips_auction,Approximate TIPS auction (5y)
+2024-08-21,fomc_minutes,FOMC minutes release
+2024-09-11,cpi_release,Monthly CPI release (BLS)
+2024-09-12,tips_auction,Approximate TIPS auction (10y)
+2024-09-18,fomc_statement,FOMC rate decision
+2024-10-09,fomc_minutes,FOMC minutes release
+2024-10-10,cpi_release,Monthly CPI release (BLS)
+2024-10-10,tips_auction,Approximate TIPS auction (5y/20y)
+2024-11-06,treasury_refunding,Quarterly refunding statement
+2024-11-07,fomc_statement,FOMC rate decision
+2024-11-13,cpi_release,Monthly CPI release (BLS)
+2024-11-14,tips_auction,Approximate TIPS auction (10y)
+2024-11-20,fomc_minutes,FOMC minutes release
+2024-12-11,cpi_release,Monthly CPI release (BLS)
+2024-12-12,tips_auction,Approximate TIPS auction (5y)
+2024-12-18,fomc_statement,FOMC rate decision

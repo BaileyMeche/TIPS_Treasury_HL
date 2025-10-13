@@ -1,0 +1,121 @@
+{
+  "errors": [],
+  "data_source": {
+    "remote_url": "https://raw.githubusercontent.com/BaileyMeche/TIPS_Treasury_HL/codex/integrate-manual-tips-data-into-pipeline/_data/tips_treasury_implied_rf.parquet",
+    "fetched_from_cache": false,
+    "used_local_fallback": true,
+    "download_error": "404 Client Error: Not Found for url: https://raw.githubusercontent.com/BaileyMeche/TIPS_Treasury_HL/codex/integrate-manual-tips-data-into-pipeline/_data/tips_treasury_implied_rf.parquet"
+  },
+  "coverage": {
+    "2": {
+      "count": 556,
+      "coverage_pct": 100.0
+    },
+    "5": {
+      "count": 556,
+      "coverage_pct": 100.0
+    },
+    "10": {
+      "count": 556,
+      "coverage_pct": 100.0
+    },
+    "20": {
+      "count": 556,
+      "coverage_pct": 100.0
+    }
+  },
+  "winsor_bounds": {
+    "2": [
+      -12.166364319363492,
+      42.851840982743816
+    ],
+    "5": [
+      10.018796978089771,
+      33.879367028128705
+    ],
+    "10": [
+      9.483556950083372,
+      41.134730611092934
+    ],
+    "20": [
+      -2.5193021449098496,
+      26.746855830548853
+    ]
+  },
+  "missing_streaks": {
+    "2": 0,
+    "5": 0,
+    "10": 0,
+    "20": 0
+  },
+  "stationarity": {
+    "2": {
+      "adf_stat": -2.4406484520358567,
+      "adf_p": 0.13059071715345372,
+      "kpss_stat": 0.23620709815901314,
+      "kpss_p": 0.1
+    },
+    "5": {
+      "adf_stat": -1.4940920706261656,
+      "adf_p": 0.5364318563270588,
+      "kpss_stat": 1.2207400220140414,
+      "kpss_p": 0.01
+    },
+    "10": {
+      "adf_stat": -2.2275705148008798,
+      "adf_p": 0.19639153229217787,
+      "kpss_stat": 1.7870155457344337,
+      "kpss_p": 0.01
+    },
+    "20": {
+      "adf_stat": -2.9444183186345003,
+      "adf_p": 0.040421222622694784,
+      "kpss_stat": 1.1631413584682968,
+      "kpss_p": 0.01
+    }
+  },
+  "events": {
+    "counts_by_type": {
+      "cpi_release": 27,
+      "fomc_minutes": 17,
+      "fomc_statement": 18,
+      "tips_auction": 27,
+      "treasury_refunding": 9
+    }
+  },
+  "shock_thresholds": {
+    "2": {
+      "thr_abs_change": 3.320069450429833,
+      "thr_level": 32.28943913601339
+    },
+    "5": {
+      "thr_abs_change": 2.3444804475474372,
+      "thr_level": 13.756402339307101
+    },
+    "10": {
+      "thr_abs_change": 3.1907224602596793,
+      "thr_level": 13.337574016378795
+    },
+    "20": {
+      "thr_abs_change": 2.934013955414344,
+      "thr_level": 8.975995021548975
+    }
+  },
+  "event_segments": {
+    "counts": {
+      "cpi_release": 27,
+      "fomc_minutes": 17,
+      "fomc_statement": 18,
+      "tips_auction": 27,
+      "treasury_refunding": 9
+    }
+  },
+  "event_fit_errors": [
+    "cpi_release 10 2022-11-10 window1: flat_segment",
+    "fomc_minutes 5 2022-11-23 window1: flat_segment",
+    "tips_auction 10 2022-11-10 window1: flat_segment"
+  ],
+  "breakpoints": {
+    "count": 216
+  }
+}
