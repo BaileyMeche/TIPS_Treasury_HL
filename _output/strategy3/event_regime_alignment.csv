@@ -1,0 +1,14 @@
+# Average slow-regime probabilities on macro event days by tenor
+tenor,event,event_count,avg_slow_regime_prob
+2,cpi_release,180,0.280672478482141
+2,fomc_statement,121,0.30234192148748396
+2,tips_auction,180,0.28960471447990194
+5,cpi_release,180,0.2319548025061636
+5,fomc_statement,121,0.26759778261475126
+5,tips_auction,180,0.26003665912055557
+10,cpi_release,180,0.22146137376485545
+10,fomc_statement,121,0.2841680692589206
+10,tips_auction,180,0.22803662620161463
+20,cpi_release,180,0.7760290057249072
+20,fomc_statement,121,0.7687837727828184
+20,tips_auction,180,0.7625389268762842
