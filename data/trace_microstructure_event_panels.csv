@@ -1,0 +1,39 @@
+event_date,event_type,details,tenor,total_volume,ats_share,principal_share,dealer_hhi,trade_count,dealer_count
+2020-01-08,fomc_minutes,Approx. FOMC minutes,5,1000000.0,0.0,1.0,1.0,1,1
+2020-01-08,fomc_minutes,Approx. FOMC minutes,7,1000000.0,1.0,1.0,1.0,1,1
+2020-01-09,tips_auction_announce,Approximate TIPS auction (5y/10y),5,1000000.0,1.0,0.0,1.0,1,1
+2020-01-09,tips_auction_announce,Approximate TIPS auction (5y/10y),7,1000000.0,1.0,0.0,1.0,1,1
+2020-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic),5,1000000.0,1.0,0.0,1.0,1,1
+2020-01-15,fomc_statement,Approx. FOMC rate decision,5,1000000.0,1.0,0.0,1.0,1,1
+2020-01-15,cpi_release,Approx. CPI release (BLS schedule heuristic),7,1000000.0,0.0,1.0,1.0,1,1
+2020-01-15,fomc_statement,Approx. FOMC rate decision,7,1000000.0,0.0,1.0,1.0,1,1
+2020-01-16,tips_auction,Approximate TIPS auction (5y/10y),5,1000000.0,0.0,1.0,1.0,1,1
+2020-01-16,tips_auction,Approximate TIPS auction (5y/10y),7,1000000.0,0.0,1.0,1.0,1,1
+2020-01-21,tips_auction_settlement,Approximate TIPS auction (5y/10y),5,1000000.0,0.0,1.0,1.0,1,1
+2020-01-21,tips_auction_settlement,Approximate TIPS auction (5y/10y),7,1000000.0,0.0,0.0,1.0,1,1
+2020-02-05,fomc_minutes,Approx. FOMC minutes,5,1000000.0,0.0,0.0,1.0,1,1
+2020-02-05,treasury_refunding,Treasury refunding statement,5,1000000.0,0.0,0.0,1.0,1,1
+2020-02-05,fomc_minutes,Approx. FOMC minutes,7,1000000.0,0.0,0.0,1.0,1,1
+2020-02-05,treasury_refunding,Treasury refunding statement,7,1000000.0,0.0,0.0,1.0,1,1
+2020-02-13,tips_auction_announce,Approximate TIPS auction (20y),5,1000000.0,1.0,0.0,1.0,1,1
+2020-02-13,tips_auction_announce,Approximate TIPS auction (20y),7,1000000.0,0.0,1.0,1.0,1,1
+2020-02-17,cpi_release,Approx. CPI release (BLS schedule heuristic),5,1000000.0,0.0,0.0,1.0,1,1
+2020-02-17,cpi_release,Approx. CPI release (BLS schedule heuristic),7,1000000.0,0.0,1.0,1.0,1,1
+2020-02-20,tips_auction,Approximate TIPS auction (20y),5,1000000.0,1.0,1.0,1.0,1,1
+2020-02-20,tips_auction,Approximate TIPS auction (20y),7,1000000.0,0.0,1.0,1.0,1,1
+2020-02-25,tips_auction_settlement,Approximate TIPS auction (20y),5,1000000.0,0.0,1.0,1.0,1,1
+2020-02-25,tips_auction_settlement,Approximate TIPS auction (20y),7,1000000.0,0.0,0.0,1.0,1,1
+2020-03-03,fomc_statement,Emergency FOMC action,5,1000000.0,1.0,0.0,1.0,1,1
+2020-03-03,fomc_statement,Emergency FOMC action,7,1000000.0,1.0,0.0,1.0,1,1
+2020-03-12,tips_auction_announce,Approximate TIPS auction (10y),5,1000000.0,0.0,0.0,1.0,1,1
+2020-03-12,tips_auction_announce,Approximate TIPS auction (10y),7,1000000.0,1.0,0.0,1.0,1,1
+2020-03-15,fomc_statement,Emergency FOMC action,5,1000000.0,0.0,0.0,1.0,1,1
+2020-03-15,fomc_statement,Emergency FOMC action,7,1000000.0,0.0,0.0,1.0,1,1
+2020-03-16,cpi_release,Approx. CPI release (BLS schedule heuristic),5,1000000.0,1.0,1.0,1.0,1,1
+2020-03-16,cpi_release,Approx. CPI release (BLS schedule heuristic),7,1000000.0,0.0,1.0,1.0,1,1
+2020-03-18,fomc_statement,Approx. FOMC rate decision,5,1000000.0,1.0,1.0,1.0,1,1
+2020-03-18,fomc_statement,Approx. FOMC rate decision,7,1000000.0,1.0,1.0,1.0,1,1
+2020-03-19,tips_auction,Approximate TIPS auction (10y),5,1000000.0,1.0,0.0,1.0,1,1
+2020-03-19,tips_auction,Approximate TIPS auction (10y),7,1000000.0,0.0,1.0,1.0,1,1
+2020-03-24,tips_auction_settlement,Approximate TIPS auction (10y),5,1000000.0,1.0,1.0,1.0,1,1
+2020-03-24,tips_auction_settlement,Approximate TIPS auction (10y),7,1000000.0,1.0,0.0,1.0,1,1
