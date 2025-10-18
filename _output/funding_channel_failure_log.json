@@ -1,0 +1,1 @@
+{"stage": "wrds_probe", "error": "credentials_missing", "details": {"message": "WRDS_USERNAME/WRDS_PASSWORD not set; probe skipped."}, "timestamp": "2025-10-18T00:42:34.893451Z"}
